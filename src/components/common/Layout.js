@@ -1,6 +1,6 @@
 import React from 'react';
 import Nav from './Nav';
-import GlobalStyles from '../styles/GlobalStyles';
+import GlobalStyles from '../../styles/GlobalStyles';
 
 const Layout = props => (
   <div>

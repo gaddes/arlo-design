@@ -1,5 +1,5 @@
 import React from 'react';
-import Layout from './src/components/Layout';
+import Layout from './src/components/common/Layout';
 
 // Wrap ALL pages with the component returned from this function
 export function wrapPageElement({ element, props }) {
