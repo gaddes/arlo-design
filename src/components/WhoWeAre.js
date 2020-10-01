@@ -33,7 +33,7 @@ const Text = styled.div`
 const WhoWeAre = () => {
   const data = useStaticQuery(graphql`
     query {
-      hero: file(relativePath: { eq: "images/mugshot.jpg" }) {
+      image: file(relativePath: { eq: "images/mugshot.jpg" }) {
         childImageSharp {
           # Specify the image processing specifications right in the query.
           fluid(maxWidth: 600, maxHeight: 400) {
@@ -56,7 +56,7 @@ const WhoWeAre = () => {
         </MainText>
 
         <Img
-          fluid={data.hero.childImageSharp.fluid}
+          fluid={data.image.childImageSharp.fluid}
           alt='Minions constructing a website'
         />
       </Div>
