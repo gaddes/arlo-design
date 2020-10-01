@@ -14,31 +14,24 @@ const Div = styled.div`
   padding: 1rem;
 `;
 
-const Content = styled.div`
-  flex: 0 1 100%;
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: flex-start;
-  align-items: flex-start;
-`;
+const Card = props => (
+  <Div className={props.className}>
+    <Icon {...props} />
+    <div>{props.children}</div>
+  </Div>
+);
 
-
-const Card = props => {
-
-  return (
-    <Div className={props.className}>
-      <Icon {...props} />
-      <Content>
-        {props.children}
-      </Content>
-    </Div>
-  );
-};
-
-const { node } = PropTypes;
+const { string, node } = PropTypes;
 
 Card.propTypes = {
   children: node.isRequired,
+  type: string,
+  className: string,
+};
+
+Card.defaultProps = {
+  type: 'none',
+  className: '',
 };
 
 export default Card;
