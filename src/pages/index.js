@@ -1,9 +1,12 @@
 import React from 'react';
 
-import { Hero } from '../components';
+import { Hero, WhoWeAre } from '../components';
 
 export default function Home() {
   return (
-    <Hero />
+    <>
+      <Hero />
+      <WhoWeAre />
+    </>
   );
 }
