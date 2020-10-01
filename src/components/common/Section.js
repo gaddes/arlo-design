@@ -10,6 +10,13 @@ const bgColorMap = {
 const Div = styled.div`
   background-color: ${props => bgColorMap[props.bgColor]};
   padding: 2rem;
+  
+  h1 {
+    margin: 0 0 2rem 0;
+    font-size: 2.5rem;
+    font-weight: 300;
+    text-align: center;
+  }
 `;
 
 

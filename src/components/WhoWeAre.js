@@ -45,7 +45,7 @@ const WhoWeAre = () => {
   `);
 
   return (
-    <Section bgColor="dark">
+    <Section title="Who we are" bgColor="dark">
       <Div>
         <MainText>
           <Title>[logo] arlo_design</Title>
