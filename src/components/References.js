@@ -5,11 +5,6 @@ import Img from 'gatsby-image';
 
 import { Section, Card } from './common';
 
-const Subtitle = styled.div`
-  font-size: 1.2rem;
-  text-align: center;
-`;
-
 const Div = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -46,8 +41,11 @@ const References = () => {
   `);
 
   return (
-    <Section bgColor="light" title="References">
-      <Subtitle>Don't just take our word for it...</Subtitle>
+    <Section
+      bgColor="light"
+      title="References"
+      subtitle="Don't just take our word for it..."
+    >
       <Div>
         <Img
           fluid={data.image.childImageSharp.fluid}

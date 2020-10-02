@@ -3,6 +3,7 @@ import WhoWeAre from './WhoWeAre';
 import WhatWeDo from './WhatWeDo';
 import HowWeCanHelp from './HowWeCanHelp';
 import References from './References';
+import HowDoesItWork from './HowDoesItWork';
 
 export {
   Hero,
@@ -10,4 +11,5 @@ export {
   WhatWeDo,
   HowWeCanHelp,
   References,
+  HowDoesItWork,
 };
