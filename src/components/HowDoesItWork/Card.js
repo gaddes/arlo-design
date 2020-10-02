@@ -5,10 +5,6 @@ import Img from 'gatsby-image';
 
 import { Card as BaseCard } from '../common';
 
-const Content = styled.div`
-  
-`;
-
 const Title = styled.div`
   font-size: 1.2rem;
 `;
@@ -25,28 +21,22 @@ const Line = styled.div`
 `;
 
 const ImgWrapper = styled.div`
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
-  align-items: center;
-  
-  margin: 0 0 0 1rem;
+  float: right;
+  margin: 0 0 1rem 1rem;
 `;
 
 const Card = props => (
   <BaseCard>
-    <Content>
-      <Title>{props.title}</Title>
-      <Subtitle>{props.subtitle}</Subtitle>
-      <Line />
-      {props.children}
-    </Content>
     <ImgWrapper>
       <Img
         fixed={props.img}
         alt={props.alt}
       />
     </ImgWrapper>
+    <Title>{props.title}</Title>
+    <Subtitle>{props.subtitle}</Subtitle>
+    <Line />
+    {props.children}
   </BaseCard>
 );
 
