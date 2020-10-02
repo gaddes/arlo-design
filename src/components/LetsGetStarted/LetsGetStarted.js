@@ -3,13 +3,14 @@ import styled from 'styled-components';
 import { useStaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 
-import { Section } from './common';
+import { Section } from '../common';
+import Form from './Form';
 
 const Div = styled.div`
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
 `;
 
 const LetsGetStarted = () => {
@@ -29,7 +30,7 @@ const LetsGetStarted = () => {
   return (
     <Section bgColor="light" title="Let's get started!">
       <Div>
-        <div>form goes here</div>
+        <Form />
         <Img
           fixed={data.image.childImageSharp.fixed}
           alt="An app with two people chatting"
