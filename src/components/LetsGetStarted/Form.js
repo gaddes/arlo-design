@@ -59,7 +59,7 @@ const Form = () => (
     <form
       data-netlify="true"
       id='contact'
-      name='contact'
+      name='contact-two'
       method='post'
       // TODO: choose where to go after submit
       // action='/contact/thanks/'
