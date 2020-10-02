@@ -21,6 +21,11 @@ const Div = styled.div`
 `;
 
 const CardWrapper = styled.div`
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+
   > * {
     margin: 2rem 0;
   }
