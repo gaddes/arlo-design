@@ -49,6 +49,8 @@ const Form = () => (
       action='/'
       // data-netlify-honeypot='bot-field'
     >
+      {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
+      <input type="hidden" name="form-name" value="contact" />
       <input type="text" name="name" placeholder="Name" />
       <input type="email" name="email" placeholder="Email" />
       <input type="text" name="phone" placeholder="Phone number" />
@@ -65,6 +67,8 @@ const Form = () => (
       action='/'
       // data-netlify-honeypot='bot-field'
     >
+      {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
+      <input type="hidden" name="form-name" value="contact" />
       <input type="text" name="name" placeholder="Name" />
       <input type="email" name="email" placeholder="Email" />
       <input type="text" name="phone" placeholder="Phone number" />
