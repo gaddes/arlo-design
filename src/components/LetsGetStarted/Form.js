@@ -32,6 +32,7 @@ const StyledForm = styled.form`
   
   button {
     margin: 1rem 0 0 0;
+    padding: 0.5rem 2rem;
     align-self: center;
   }
 `;

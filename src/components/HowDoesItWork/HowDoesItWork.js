@@ -19,7 +19,7 @@ const Masonry = styled.div`
 const HowDoesItWork = () => {
   const data = useStaticQuery(graphql`
     query {
-      image: file(relativePath: { eq: "images/mugshot.jpg" }) {
+      image: file(relativePath: { eq: "mugshot.jpg" }) {
         childImageSharp {
           # Specify the image processing specifications right in the query.
           fixed(width: 200, height: 150) {

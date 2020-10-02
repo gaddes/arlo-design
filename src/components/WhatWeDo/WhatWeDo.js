@@ -15,7 +15,7 @@ const Div = styled.div`
 const WhatWeDo = () => {
   const data = useStaticQuery(graphql`
     query {
-      image: file(relativePath: { eq: "images/mugshot.jpg" }) {
+      image: file(relativePath: { eq: "mugshot.jpg" }) {
         childImageSharp {
           # Specify the image processing specifications right in the query.
           fluid(maxWidth: 600, maxHeight: 400) {

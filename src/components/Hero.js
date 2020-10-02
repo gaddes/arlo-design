@@ -1,23 +1,27 @@
 import React from 'react';
 import styled from 'styled-components';
-import { useStaticQuery, graphql } from 'gatsby';
-import Img from 'gatsby-image';
 import scrollTo from 'gatsby-plugin-smoothscroll';
 
+import Img from '../assets/work_in_progress.svg';
+
 const Div = styled.div`  
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
   
   padding: 2rem;
 `;
 
 const MainText = styled.div`
+  flex: 0 1 600px;
+
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: flex-start;
   
-  margin: 0 2rem 0 0;
+  margin: 0 3rem 0 0;
 `;
 
 const Title = styled.div`
@@ -39,38 +43,25 @@ const SmallText = styled.div`
   margin: 2rem 0;
 `;
 
+const Image = styled(Img)`
+  flex: 0 0 400px;
+  height: 400px;
+`;
 
-const Hero = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      hero: file(relativePath: { eq: "images/mugshot.jpg" }) {
-        childImageSharp {
-          # Specify the image processing specifications right in the query.
-          fluid(maxWidth: 600, maxHeight: 400) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-    }
-  `);
 
-  return (
-    <Div>
-      <MainText>
-        <Title>[logo] arlo_design</Title>
-        <Subtitle>Bespoke design and development services.</Subtitle>
-        <Text>Let us create a website tailored to your needs.</Text>
-        <Text>Beautiful. Discoverable. Blazing fast.</Text>
-        <SmallText>Proudly based in Vancouver since 2019</SmallText>
-        <button onClick={() => scrollTo('#who-we-are')}>Let's get started!</button>
-      </MainText>
+const Hero = () => (
+  <Div>
+    <MainText>
+      <Title>[logo] arlo_design</Title>
+      <Subtitle>Bespoke design and development services.</Subtitle>
+      <Text>Let us create a website tailored to your needs.</Text>
+      <Text>Beautiful. Discoverable. Blazing fast.</Text>
+      <SmallText>Proudly based in Vancouver since 2019</SmallText>
+      <button onClick={() => scrollTo('#who-we-are')}>Let's get started!</button>
+    </MainText>
 
-      <Img
-        fluid={data.hero.childImageSharp.fluid}
-        alt='A woman painting a website'
-      />
-    </Div>
-  );
-};
+    <Image />
+  </Div>
+);
 
 export default Hero;
