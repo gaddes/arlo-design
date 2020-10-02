@@ -46,7 +46,7 @@ const Form = () => (
       name='contact'
       method='post'
       // TODO: choose where to go after submit
-      // action='/contact/thanks/'
+      action='/'
       // data-netlify-honeypot='bot-field'
     >
       <input type="text" name="name" placeholder="Name" />
@@ -62,7 +62,7 @@ const Form = () => (
       name='contact-two'
       method='post'
       // TODO: choose where to go after submit
-      // action='/contact/thanks/'
+      action='/'
       // data-netlify-honeypot='bot-field'
     >
       <input type="text" name="name" placeholder="Name" />
