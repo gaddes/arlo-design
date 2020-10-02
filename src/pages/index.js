@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Hero, WhoWeAre, WhatWeDo, HowWeCanHelp, References, HowDoesItWork } from '../components';
+import { Hero, WhoWeAre, WhatWeDo, HowWeCanHelp, References, HowDoesItWork, LetsGetStarted } from '../components';
 
 export default function Home() {
   return (
@@ -11,6 +11,7 @@ export default function Home() {
       <HowWeCanHelp />
       <References />
       <HowDoesItWork />
+      <LetsGetStarted />
     </>
   );
 }

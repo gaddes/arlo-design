@@ -4,6 +4,7 @@ import WhatWeDo from './WhatWeDo';
 import HowWeCanHelp from './HowWeCanHelp';
 import References from './References';
 import HowDoesItWork from './HowDoesItWork';
+import LetsGetStarted from './LetsGetStarted';
 
 export {
   Hero,
@@ -12,4 +13,5 @@ export {
   HowWeCanHelp,
   References,
   HowDoesItWork,
+  LetsGetStarted,
 };
