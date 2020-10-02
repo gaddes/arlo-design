@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Hero, WhoWeAre, WhatWeDo, HowWeCanHelp } from '../components';
+import { Hero, WhoWeAre, WhatWeDo, HowWeCanHelp, References } from '../components';
 
 export default function Home() {
   return (
@@ -9,6 +9,7 @@ export default function Home() {
       <WhoWeAre />
       <WhatWeDo />
       <HowWeCanHelp />
+      <References />
     </>
   );
 }

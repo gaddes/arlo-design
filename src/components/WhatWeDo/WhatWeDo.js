@@ -7,9 +7,7 @@ import Card from './Card';
 
 const Div = styled.div`  
   display: grid;
-  grid-template:
-    '1fr 1fr'
-    '1fr 1fr';
+  grid-template-columns: 1fr 1fr;
   grid-gap: 2rem;
 `;
 

@@ -7,8 +7,7 @@ import { Card as BaseCard } from '../common';
 
 const Div = styled.div`
   display: grid;
-  grid-template:
-    '1fr 1fr';
+  grid-template-columns: 1fr 1fr;
 `;
 
 const Title = styled.div`
