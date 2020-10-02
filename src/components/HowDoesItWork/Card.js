@@ -5,13 +5,16 @@ import Img from 'gatsby-image';
 
 import { Card as BaseCard } from '../common';
 
-const Div = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+const Content = styled.div`
+  
 `;
 
 const Title = styled.div`
   font-size: 1.2rem;
+`;
+
+const Subtitle = styled.div`
+  text-transform: uppercase;
 `;
 
 const Line = styled.div`
@@ -32,19 +35,18 @@ const ImgWrapper = styled.div`
 
 const Card = props => (
   <BaseCard>
-    <Div>
-      <div>
-        <Title>{props.title}</Title>
-        <Line />
-        {props.children}
-      </div>
-      <ImgWrapper>
-        <Img
-          fixed={props.img}
-          alt={props.alt}
-        />
-      </ImgWrapper>
-    </Div>
+    <Content>
+      <Title>{props.title}</Title>
+      <Subtitle>{props.subtitle}</Subtitle>
+      <Line />
+      {props.children}
+    </Content>
+    <ImgWrapper>
+      <Img
+        fixed={props.img}
+        alt={props.alt}
+      />
+    </ImgWrapper>
   </BaseCard>
 );
 
@@ -54,12 +56,15 @@ Card.propTypes = {
   children: oneOfType([shape({}), arrayOf(shape({}))]).isRequired,
   img: shape({}).isRequired,
   title: string,
+  subtitle: string,
   alt: string,
 };
 
 Card.defaultProps = {
   title: '',
+  subtitle: '',
   alt: '',
+
 };
 
 export default Card;
