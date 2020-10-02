@@ -41,13 +41,13 @@ const Form = () => (
   <Card>
     <Title>Fill out this form and we'll be in touch ASAP</Title>
     <StyledForm
-      netlify
+      data-netlify="true"
       id='contact'
       name='contact'
       method='post'
       // TODO: choose where to go after submit
       // action='/contact/thanks/'
-      data-netlify-honeypot='bot-field'
+      // data-netlify-honeypot='bot-field'
     >
       <input type="text" name="name" placeholder="Name" />
       <input type="email" name="email" placeholder="Email" />
@@ -55,6 +55,22 @@ const Form = () => (
       <textarea name="query" placeholder="Tell us about your business" rows="10" />
       <button type="submit">Send</button>
     </StyledForm>
+
+    <form
+      data-netlify="true"
+      id='contact'
+      name='contact'
+      method='post'
+      // TODO: choose where to go after submit
+      // action='/contact/thanks/'
+      // data-netlify-honeypot='bot-field'
+    >
+      <input type="text" name="name" placeholder="Name" />
+      <input type="email" name="email" placeholder="Email" />
+      <input type="text" name="phone" placeholder="Phone number" />
+      <textarea name="query" placeholder="Tell us about your business" rows="10" />
+      <button type="submit">Send</button>
+    </form>
   </Card>
 );
 
