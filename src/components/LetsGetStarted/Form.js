@@ -47,6 +47,7 @@ const Form = () => (
       method='post'
       // TODO: choose where to go after submit
       action='/'
+      // TODO: set up honeypot and additional spam prevention?
       // data-netlify-honeypot='bot-field'
     >
       {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
@@ -57,24 +58,6 @@ const Form = () => (
       <textarea name="query" placeholder="Tell us about your business" rows="10" />
       <button type="submit">Send</button>
     </StyledForm>
-
-    <form
-      data-netlify="true"
-      id='contact'
-      name='contact-two'
-      method='post'
-      // TODO: choose where to go after submit
-      action='/'
-      // data-netlify-honeypot='bot-field'
-    >
-      {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
-      <input type="hidden" name="form-name" value="contact" />
-      <input type="text" name="name" placeholder="Name" />
-      <input type="email" name="email" placeholder="Email" />
-      <input type="text" name="phone" placeholder="Phone number" />
-      <textarea name="query" placeholder="Tell us about your business" rows="10" />
-      <button type="submit">Send</button>
-    </form>
   </Card>
 );
 
