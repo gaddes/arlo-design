@@ -5,8 +5,14 @@ import Img from 'gatsby-image';
 
 import { Card as BaseCard } from '../common';
 
+const ImgWrapper = styled.div`
+  float: right;
+  margin: 0 0 1rem 1rem;
+`;
+
 const Title = styled.div`
-  font-size: 1.2rem;
+  font-size: 1.5rem;
+  margin: 0 0 0.5rem;
 `;
 
 const Subtitle = styled.div`
@@ -20,9 +26,14 @@ const Line = styled.div`
   margin: 12px 0;
 `;
 
-const ImgWrapper = styled.div`
-  float: right;
-  margin: 0 0 1rem 1rem;
+const Content = styled.div`
+  > * {
+    margin: 1rem 0;
+    
+    &:last-child {
+      margin: 0;
+    }
+  }
 `;
 
 const Card = props => (
@@ -36,7 +47,7 @@ const Card = props => (
     <Title>{props.title}</Title>
     <Subtitle>{props.subtitle}</Subtitle>
     <Line />
-    {props.children}
+    <Content>{props.children}</Content>
   </BaseCard>
 );
 

@@ -8,10 +8,11 @@ import Card from './Card';
 const Masonry = styled.div`
   columns: 2;
   column-gap: 1rem;
+  margin-top: -0.5rem; // Compensate for margin applied to individual Cards
   
   > * {
     display: inline-block;
-    margin: 0 0 1rem 0;
+    margin: 0.5rem 0;
   }
 `;
 
