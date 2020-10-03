@@ -2,6 +2,8 @@ import React from 'react';
 import scrollTo from 'gatsby-plugin-smoothscroll';
 import styled from 'styled-components';
 
+import Logo from '../../assets/logo_text.svg';
+
 const NavStyles = styled.nav`
   ul {
     display: flex;
@@ -9,7 +11,7 @@ const NavStyles = styled.nav`
     justify-content: space-between;
     align-items: center;
 
-    height: 36px;
+    height: 40px;
     background: var(--gray);
     margin: 0;
     padding: 0.5rem 2rem;
@@ -17,11 +19,21 @@ const NavStyles = styled.nav`
   }
 `;
 
+const Span = styled.span`
+  cursor: pointer;
+
+  svg {
+    width: 150px;
+  }
+`;
+
 const Nav = () => (
   <NavStyles>
     <ul>
       <li>
-        <span onClick={() => scrollTo('#hero')}>[LOGO]</span>
+        <Span onClick={() => scrollTo('#hero')}>
+          <Logo />
+        </Span>
       </li>
       <li>
         <button onClick={() => scrollTo('#contact')}>Contact</button>

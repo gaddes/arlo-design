@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import scrollTo from 'gatsby-plugin-smoothscroll';
 
+import Logo from '../assets/logo_text.svg';
 import Img from '../assets/work_in_progress.svg';
 
 const Div = styled.div`  
@@ -26,7 +27,11 @@ const MainText = styled.div`
 
 const Title = styled.div`
   font-size: 3rem;
-  margin: 0 0 2rem 0;
+  margin: 0 0 1rem 0;
+  
+  svg {
+    width: 300px;
+  }
 `;
 
 const Subtitle = styled.div`
@@ -50,9 +55,9 @@ const Image = styled(Img)`
 
 
 const Hero = () => (
-  <Div>
+  <Div id='hero'>
     <MainText>
-      <Title>[logo] arlo_design</Title>
+      <Title><Logo /></Title>
       <Subtitle>Bespoke design and development services.</Subtitle>
       <Text>Let us create a website tailored to your needs.</Text>
       <Text>Beautiful. Discoverable. Blazing fast.</Text>
