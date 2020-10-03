@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import { graphql, useStaticQuery } from 'gatsby';
-import Img from 'gatsby-image';
 
 import { Section, Card } from './common';
+
+import Img from '../assets/content_creator.svg';
 
 const Div = styled.div`
   display: grid;
@@ -12,6 +12,18 @@ const Div = styled.div`
   
   > div.gatsby-image-wrapper {
     margin: 0 2rem 0 0;
+  }
+`;
+
+const Image = styled.div`
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+
+  svg {
+    width: 350px;
+    height: 350px;
   }
 `;
 
@@ -26,42 +38,26 @@ const CardWrapper = styled.div`
   }
 `;
 
-const References = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      image: file(relativePath: { eq: "mugshot.jpg" }) {
-        childImageSharp {
-          # Specify the image processing specifications right in the query.
-          fluid(maxWidth: 600, maxHeight: 400) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-    }
-  `);
-
-  return (
-    <Section
-      bgColor="light"
-      title="References"
-      subtitle="Don't just take our word for it..."
-    >
-      <Div>
-        <Img
-          fluid={data.image.childImageSharp.fluid}
-          alt="A woman reading a reference"
-        />
-        <CardWrapper>
-          <Card>
-            <div>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor" - Person X, Company Y</div>
-          </Card>
-          <Card>
-            <div>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor" - Person X, Company Y</div>
-          </Card>
-        </CardWrapper>
-      </Div>
-    </Section>
-  );
-};
+const References = () => (
+  <Section
+    bgColor="light"
+    title="References"
+    subtitle="Don't just take our word for it..."
+  >
+    <Div>
+      <Image>
+        <Img alt="A woman reading a reference" />
+      </Image>
+      <CardWrapper>
+        <Card>
+          <div>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor" - Person X, Company Y</div>
+        </Card>
+        <Card>
+          <div>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor" - Person X, Company Y</div>
+        </Card>
+      </CardWrapper>
+    </Div>
+  </Section>
+);
 
 export default References;

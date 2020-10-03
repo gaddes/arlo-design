@@ -57,7 +57,7 @@ const Hero = () => (
       <Text>Let us create a website tailored to your needs.</Text>
       <Text>Beautiful. Discoverable. Blazing fast.</Text>
       <SmallText>Proudly based in Vancouver since 2019</SmallText>
-      <button onClick={() => scrollTo('#who-we-are')}>Let's get started!</button>
+      <button onClick={() => scrollTo('#contact')}>Let's get started!</button>
     </MainText>
 
     <Image />

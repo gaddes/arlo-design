@@ -49,7 +49,7 @@ const WhoWeAre = () => (
         <Text>Read on to learn more...</Text>
       </MainText>
 
-      <Image />
+      <Image alt="Minions working together on a project" />
     </Div>
   </Section>
 );
