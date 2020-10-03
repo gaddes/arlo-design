@@ -1,5 +1,4 @@
 import React from 'react';
-import Img from 'gatsby-image';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
@@ -10,8 +9,13 @@ const Title = styled.div`
   text-align: center;
 `;
 
-const ImgWrapper = styled.div`
-  padding: 2rem 3rem;
+const Image = styled.div`
+  text-align: center;
+
+  svg {
+    width: 250px;
+    height: 200px;
+  }
 `;
 
 const ContentWrapper = styled.div`
@@ -20,26 +24,23 @@ const ContentWrapper = styled.div`
   }
 `;
 
-const Card = props => (
+const Card = ({ Img, ...props }) => (
   <BaseCard>
     <Title>{props.title}</Title>
-    <ImgWrapper>
-      <Img
-        fluid={props.img}
-        alt={props.alt}
-      />
-    </ImgWrapper>
+    <Image>
+      <Img alt={props.alt}/>
+    </Image>
     <ContentWrapper>
       {props.children}
     </ContentWrapper>
   </BaseCard>
 );
 
-const { shape, arrayOf, oneOfType, string } = PropTypes;
+const { shape, arrayOf, oneOfType, string, element } = PropTypes;
 
 Card.propTypes = {
   children: oneOfType([shape({}), arrayOf(shape({}))]).isRequired,
-  img: shape({}).isRequired,
+  Img: element.isRequired,
   title: string,
   alt: string,
 };
