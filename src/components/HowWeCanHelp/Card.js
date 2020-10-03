@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import Img from 'gatsby-image';
+// import Img from 'gatsby-image';
 
 import { Card as BaseCard } from '../common';
 
@@ -21,16 +21,20 @@ const Line = styled.div`
   margin: 12px 0;
 `;
 
-const ImgWrapper = styled.div`
+const Image = styled.div`
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
-  
   margin: 0 0 0 1rem;
+  
+  svg {
+    width: 180px;
+    height: 120px;
+  }
 `;
 
-const Card = props => (
+const Card = ({ Img, ...props }) => (
   <BaseCard>
     <Div>
       <div>
@@ -38,21 +42,18 @@ const Card = props => (
         <Line />
         {props.children}
       </div>
-      <ImgWrapper>
-        <Img
-          fixed={props.img}
-          alt={props.alt}
-        />
-      </ImgWrapper>
+      <Image>
+        <Img alt={props.alt} />
+      </Image>
     </Div>
   </BaseCard>
 );
 
-const { shape, arrayOf, oneOfType, string } = PropTypes;
+const { shape, arrayOf, oneOfType, string, element } = PropTypes;
 
 Card.propTypes = {
   children: oneOfType([shape({}), arrayOf(shape({}))]).isRequired,
-  img: shape({}).isRequired,
+  Img: element.isRequired,
   title: string,
   alt: string,
 };
