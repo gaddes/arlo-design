@@ -37,7 +37,7 @@ const WhoWeAre = () => (
   <Section id="who-we-are" title="Who we are" bgColor="dark">
     <Div>
       <MainText>
-        <Text>Arlo Design is a web design and development agency that works with you to enhance your online presence and helps you <b>achieve your business goals</b>.</Text>
+        <Text>Arlo Design is a web design and development agency that works with you to enhance your online presence and help you <b>achieve your business goals</b>.</Text>
         <Text>We love to partner with small businesses like ourselves, working together to ensure every site has a <b>personal touch</b>.</Text>
         <Text>Above all else we value <b>trust, honesty and communication</b>. These three values underpin every project we do, ensuring we stay in touch and in sync <b>every step of the way</b>.</Text>
         <Text>Read on to learn more...</Text>
