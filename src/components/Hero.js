@@ -8,19 +8,48 @@ import Img from '../assets/work_in_progress.svg';
 import mediaQueries from '../helpers/mediaQueries';
 
 const Div = styled.div({
-  padding: '2rem',
+  padding: '2rem 0',
   display: 'grid',
-  gridTemplateColumns: '600px 400px',
+  gridTemplateColumns: '550px 400px',
+  gridTemplateAreas: `
+    'title image'
+    'content image'
+  `,
   justifyContent: 'center',
+  alignItems: 'center',
+  gridGap: '1rem',
 
   ['@media' + mediaQueries.mediumWidth]: {
     gridTemplateColumns: '1fr',
+    gridTemplateAreas: `
+      'title'
+      'image'
+      'content'
+    `,
     justifyItems: 'center',
   },
 });
 
 const MainText = styled.div({
-  margin: '0 3rem 0 0',
+  gridArea: 'title',
+  margin: '0 1rem 0 2rem',
+
+  ['@media' + mediaQueries.mediumWidth]: {
+    margin: 0,
+    display: 'flex',
+    flexFlow: 'column nowrap',
+    justifyContent: 'center',
+    alignItems: 'center',
+
+    '> *': {
+      textAlign: 'center',
+    }
+  },
+});
+
+const SubText = styled.div({
+  gridArea: 'content',
+  margin: '0 1rem 0 2rem',
 
   ['@media' + mediaQueries.mediumWidth]: {
     margin: 0,
@@ -46,7 +75,6 @@ const Title = styled.div`
 
 const Subtitle = styled.div`
   font-size: 1.5rem;
-  margin: 0 0 2rem 0;
 `;
 
 const Text = styled.div`
@@ -59,13 +87,15 @@ const SmallText = styled.div`
 `;
 
 const Image = styled(Img)({
-  width: '100%',
-  height: '400px',
+  gridArea: 'image',
+  width: '350px',
+  height: '350px',
+  margin: '0 1rem',
+  justifySelf: 'center',
 
   ['@media' + mediaQueries.mediumWidth]: {
-    width: '350px',
-    height: '300px',
-    margin: '2rem 0 0 0',
+    height: 200,
+    margin: '1rem 0 0 0',
   },
 });
 
@@ -75,11 +105,14 @@ const Hero = () => (
     <MainText>
       <Title><Logo /></Title>
       <Subtitle>Bespoke design and development services.</Subtitle>
+    </MainText>
+
+    <SubText>
       <Text>Let us create a website tailored to your needs.</Text>
       <Text>Beautiful. Discoverable. Blazing fast.</Text>
       <SmallText>Proudly based in Vancouver since 2019</SmallText>
       <button onClick={() => scrollTo('#contact')}>Let's get started!</button>
-    </MainText>
+    </SubText>
 
     <Image />
   </Div>

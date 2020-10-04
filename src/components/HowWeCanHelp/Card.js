@@ -4,10 +4,20 @@ import styled from 'styled-components';
 
 import { Card as BaseCard } from '../common';
 
-const Div = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-`;
+import mediaQueries from '../../helpers/mediaQueries';
+
+const StyledCard = styled(BaseCard)({
+  maxWidth: 500,
+});
+
+const Div = styled.div({
+  display: 'grid',
+  gridTemplateColumns: '1fr 200px',
+
+  ['@media' + mediaQueries.mediumWidth]: {
+    gridTemplateColumns: '1fr',
+  },
+});
 
 const Title = styled.div`
   font-size: 1.2rem;
@@ -20,21 +30,29 @@ const Line = styled.div`
   margin: 12px 0;
 `;
 
-const Image = styled.div`
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
-  align-items: center;
-  margin: 0 0 0 1rem;
-  
-  svg {
-    width: 180px;
-    height: 120px;
-  }
-`;
+const Image = styled.div({
+  display: 'flex',
+  flexFlow: 'row nowrap',
+  justifyContent: 'center',
+  alignItems: 'center',
+  margin: '0 0 0 1rem',
+
+  ['@media' + mediaQueries.mediumWidth]: {
+    margin: '1.5rem 0 0 0',
+  },
+
+  'svg': {
+    width: 180,
+    height: 120,
+
+    ['@media' + mediaQueries.mediumWidth]: {
+      width: 250,
+    },
+  },
+});
 
 const Card = ({ Img, ...props }) => (
-  <BaseCard bgColor="light">
+  <StyledCard bgColor="light">
     <Div>
       <div>
         <Title>{props.title}</Title>
@@ -45,7 +63,7 @@ const Card = ({ Img, ...props }) => (
         <Img alt={props.alt} />
       </Image>
     </Div>
-  </BaseCard>
+  </StyledCard>
 );
 
 const { shape, arrayOf, oneOfType, string, element } = PropTypes;

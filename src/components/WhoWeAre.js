@@ -8,18 +8,27 @@ import mediaQueries from '../helpers/mediaQueries';
 
 const Div = styled.div({
   display: 'grid',
-  gridTemplateColumns: '600px 400px',
+  gridTemplateColumns: '550px 400px',
+  gridTemplateAreas: `
+    'content image'
+  `,
   justifyContent: 'center',
   alignItems: 'center',
+  gridGap: '1rem',
 
   ['@media' + mediaQueries.mediumWidth]: {
     gridTemplateColumns: '1fr',
+    gridTemplateAreas: `
+      'image'
+      'content'
+    `,
     justifyItems: 'center',
   },
 });
 
 const MainText = styled.div({
-  margin: '0 3rem 0 0',
+  gridArea: 'content',
+  margin: '0 1rem 0 2rem',
 
   ['@media' + mediaQueries.mediumWidth]: {
     margin: 0,
@@ -40,13 +49,14 @@ const Text = styled.div`
 `;
 
 const Image = styled(Img)({
-  width: '100%',
+  gridArea: 'image',
+  width: '350px',
   height: '300px',
+  margin: '0 1rem',
+  justifySelf: 'center',
 
   ['@media' + mediaQueries.mediumWidth]: {
-    width: '350px',
     height: '250px',
-    margin: '2rem 0 0 0',
   },
 });
 

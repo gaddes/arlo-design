@@ -33,7 +33,7 @@ const Line = styled.div`
 const Content = styled.div`
   > * {
     margin: 1rem 0;
-    
+
     &:last-child {
       margin: 0;
     }

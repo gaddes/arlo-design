@@ -9,11 +9,23 @@ import Dev from '../../assets/programming.svg';
 import Brand from '../../assets/color_schemes.svg';
 import Seo from '../../assets/web_search.svg';
 
-const Div = styled.div`  
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 2rem;
-`;
+import mediaQueries from '../../helpers/mediaQueries';
+
+const Div = styled.div({
+  display: 'grid',
+  gridTemplateColumns: '450px 450px',
+  gridGap: '2rem',
+  justifyItems: 'center',
+  justifyContent: 'center',
+
+  ['@media' + mediaQueries.mediumWidth]: {
+    gridTemplateColumns: '450px',
+  },
+
+  ['@media' + mediaQueries.smallWidth]: {
+    gridTemplateColumns: '1fr',
+  }
+});
 
 const WhatWeDo = () => (
   <Section title="What we do" bgColor="light">

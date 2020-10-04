@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { Section } from '../common';
+import { Section as BaseSection } from '../common';
 import Card from './Card';
 
 import Analytics from '../../assets/progress_data.svg';
@@ -11,11 +11,27 @@ import Discover from '../../assets/my_current_location.svg';
 import Presence from '../../assets/data_processing.svg';
 import Personal from '../../assets/with_love.svg';
 
-const Div = styled.div`  
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 2rem;
+import mediaQueries from '../../helpers/mediaQueries';
+
+const Section = styled(BaseSection)`
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: center;
 `;
+
+const Div = styled.div({
+  display: 'grid',
+  gridTemplateColumns: '1fr 1fr',
+  justifyContent: 'center',
+  justifyItems: 'center',
+  gridGap: '2rem',
+  maxWidth: 1000,
+
+  ['@media' + mediaQueries.mediumWidth]: {
+    gridTemplateColumns: '1fr',
+  },
+});
 
 const Em = styled.i`
   margin: 0;

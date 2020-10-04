@@ -5,38 +5,61 @@ import { Section, Card } from './common';
 
 import Img from '../assets/content_creator.svg';
 
-const Div = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  margin: 2rem;
-  
-  > div.gatsby-image-wrapper {
-    margin: 0 2rem 0 0;
-  }
-`;
+import mediaQueries from '../helpers/mediaQueries';
 
-const Image = styled.div`
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
-  align-items: center;
+const Div = styled.div({
+  display: 'grid',
+  gridTemplateColumns: '1fr 1fr',
+  gridTemplateAreas: `
+    'image references'
+  `,
+  gridGap: '2rem',
+  margin: '2rem',
 
-  svg {
-    width: 350px;
-    height: 350px;
-  }
-`;
+  ['@media' + mediaQueries.mediumWidth]: {
+    gridTemplateColumns: '1fr',
+    gridTemplateAreas: `
+      'image'
+      'references'
+    `,
+    gridGap: '0.5rem',
+    margin: '0 2rem 1rem 2rem',
+  },
 
-const CardWrapper = styled.div`
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-items: center;
+  '> div.gatsby-image-wrapper': {
+    margin: '0 2rem 0 0',
+  },
+});
 
-  > * {
-    margin: 2rem 0;
-  }
-`;
+const Image = styled.div({
+  gridArea: 'image',
+  display: 'flex',
+  flexFlow: 'row nowrap',
+  justifyContent: 'center',
+  alignItems: 'center',
+
+  '> svg': {
+    width: 350,
+    height: 350,
+
+    ['@media' + mediaQueries.mediumWidth]: {
+      width: 250,
+      height: 250,
+    },
+  },
+});
+
+const CardWrapper = styled.div({
+  gridArea: 'references',
+  display: 'flex',
+  flexFlow: 'column nowrap',
+  justifyContent: 'center',
+  alignItems: 'center',
+
+  '> *': {
+    margin: '1rem 0',
+  },
+});
 
 const References = () => (
   <Section
