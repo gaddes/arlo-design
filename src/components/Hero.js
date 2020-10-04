@@ -5,25 +5,38 @@ import scrollTo from 'gatsby-plugin-smoothscroll';
 import Logo from '../assets/logo_text.svg';
 import Img from '../assets/work_in_progress.svg';
 
-const Div = styled.div`  
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
-  align-items: center;
-  
-  padding: 2rem;
-`;
+import mediaQueries from '../helpers/mediaQueries';
 
-const MainText = styled.div`
-  flex: 0 1 600px;
+const Div = styled.div({
+  padding: '2rem',
+  display: 'grid',
+  gridTemplateColumns: '600px 400px',
 
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-items: flex-start;
-  
-  margin: 0 3rem 0 0;
-`;
+  ['@media' + mediaQueries.mediumWidth]: {
+    gridTemplateColumns: '600px 300px',
+  },
+
+  ['@media' + mediaQueries.smallWidth]: {
+    gridTemplateColumns: '1fr',
+    justifyItems: 'center',
+  },
+});
+
+const MainText = styled.div({
+  margin: '0 3rem 0 0',
+
+  ['@media' + mediaQueries.smallWidth]: {
+    margin: 0,
+    display: 'flex',
+    flexFlow: 'column nowrap',
+    justifyContent: 'center',
+    alignItems: 'center',
+
+    '> *': {
+      textAlign: 'center',
+    }
+  },
+});
 
 const Title = styled.div`
   font-size: 3rem;
@@ -48,10 +61,16 @@ const SmallText = styled.div`
   margin: 2rem 0;
 `;
 
-const Image = styled(Img)`
-  flex: 0 0 400px;
-  height: 400px;
-`;
+const Image = styled(Img)({
+  width: '100%',
+  height: '400px',
+
+  ['@media' + mediaQueries.smallWidth]: {
+    width: '350px',
+    height: '300px',
+    margin: '2rem 0 0 0',
+  },
+});
 
 
 const Hero = () => (
