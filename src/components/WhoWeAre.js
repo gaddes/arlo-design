@@ -4,33 +4,51 @@ import Img from '../assets/content_team.svg';
 
 import { Section } from './common';
 
-const Div = styled.div`  
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
-  align-items: center;
-`;
+import mediaQueries from '../helpers/mediaQueries';
 
-const MainText = styled.div`
-  flex: 0 1 600px;
+const Div = styled.div({
+  display: 'grid',
+  gridTemplateColumns: '600px 400px',
+  justifyContent: 'center',
+  alignItems: 'center',
 
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-items: flex-start;
-  
-  margin: 0 3rem 0 0;
-`;
+  ['@media' + mediaQueries.mediumWidth]: {
+    gridTemplateColumns: '1fr',
+    justifyItems: 'center',
+  },
+});
+
+const MainText = styled.div({
+  margin: '0 3rem 0 0',
+
+  ['@media' + mediaQueries.mediumWidth]: {
+    margin: 0,
+    display: 'flex',
+    flexFlow: 'column nowrap',
+    justifyContent: 'center',
+    alignItems: 'center',
+
+    '> *': {
+      textAlign: 'center',
+    }
+  },
+});
 
 const Text = styled.div`
   font-size: 1.2rem;
   margin: 0 0 1rem 0;
 `;
 
-const Image = styled(Img)`
-  flex: 0 0 400px;
-  height: 250px;
-`;
+const Image = styled(Img)({
+  width: '100%',
+  height: '300px',
+
+  ['@media' + mediaQueries.mediumWidth]: {
+    width: '350px',
+    height: '250px',
+    margin: '2rem 0 0 0',
+  },
+});
 
 
 const WhoWeAre = () => (

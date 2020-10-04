@@ -11,12 +11,9 @@ const Div = styled.div({
   padding: '2rem',
   display: 'grid',
   gridTemplateColumns: '600px 400px',
+  justifyContent: 'center',
 
   ['@media' + mediaQueries.mediumWidth]: {
-    gridTemplateColumns: '600px 300px',
-  },
-
-  ['@media' + mediaQueries.smallWidth]: {
     gridTemplateColumns: '1fr',
     justifyItems: 'center',
   },
@@ -25,7 +22,7 @@ const Div = styled.div({
 const MainText = styled.div({
   margin: '0 3rem 0 0',
 
-  ['@media' + mediaQueries.smallWidth]: {
+  ['@media' + mediaQueries.mediumWidth]: {
     margin: 0,
     display: 'flex',
     flexFlow: 'column nowrap',
@@ -65,7 +62,7 @@ const Image = styled(Img)({
   width: '100%',
   height: '400px',
 
-  ['@media' + mediaQueries.smallWidth]: {
+  ['@media' + mediaQueries.mediumWidth]: {
     width: '350px',
     height: '300px',
     margin: '2rem 0 0 0',
