@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Img from '../assets/content_team.svg';
+import Img from '../assets/work_in_progress.svg';
 
 import { Section } from './common';
 

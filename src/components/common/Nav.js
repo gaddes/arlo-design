@@ -5,13 +5,15 @@ import styled from 'styled-components';
 import Logo from '../../assets/logo_text.svg';
 
 const NavStyles = styled.nav`
+  border-bottom: 3px solid var(--dark-blue);
+
   ul {
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
     align-items: center;
 
-    height: 40px;
+    height: 50px;
     background: var(--gray);
     margin: 0;
     padding: 0.5rem 2rem;
