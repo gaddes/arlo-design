@@ -19,7 +19,7 @@ const Image = styled(Img)`
 `;
 
 const LetsGetStarted = () => (
-  <Section bgColor="light" title="Let's get started!">
+  <Section title="Let's get started!">
     <Div>
       <Form />
       <Image alt="An app with two people chatting" />

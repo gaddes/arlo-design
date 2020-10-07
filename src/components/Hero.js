@@ -15,9 +15,6 @@ const Div = styled.div({
   alignItems: 'center',
   minHeight: 650,
 
-  background: `url('repeating_triangles.svg') fixed`,
-  backgroundSize: '75%',
-
   ['@media' + mediaQueries.mediumWidth]: {
     flexDirection: 'column',
   },

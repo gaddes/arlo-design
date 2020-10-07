@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import Logo from '../../assets/logo_text.svg';
 
 const NavStyles = styled.nav`
+  background-color: var(--light-gray);
   border-bottom: 3px solid var(--dark-blue);
 
   ul {
@@ -14,7 +15,6 @@ const NavStyles = styled.nav`
     align-items: center;
 
     height: 50px;
-    background: var(--gray);
     margin: 0;
     padding: 0.5rem 2rem;
     list-style: none;

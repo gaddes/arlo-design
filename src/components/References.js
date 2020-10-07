@@ -63,7 +63,6 @@ const CardWrapper = styled.div({
 
 const References = () => (
   <Section
-    bgColor="light"
     title="References"
     subtitle="Don't just take our word for it..."
   >

@@ -28,7 +28,7 @@ const Div = styled.div({
 });
 
 const WhatWeDo = () => (
-  <Section title="What we do" bgColor="light">
+  <Section title="What we do">
     <Div>
       <Card
         title="Design"

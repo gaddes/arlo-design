@@ -37,7 +37,7 @@ const Masonry = styled.div({
 });
 
 const HowDoesItWork = () => (
-  <Section bgColor="dark" title="How does it work?">
+  <Section title="How does it work?">
     <Div>
       <Masonry>
         <Card

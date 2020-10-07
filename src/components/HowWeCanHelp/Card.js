@@ -52,7 +52,7 @@ const Image = styled.div({
 });
 
 const Card = ({ Img, ...props }) => (
-  <StyledCard bgColor="light">
+  <StyledCard bgColor="dark">
     <Div>
       <div>
         <Title>{props.title}</Title>

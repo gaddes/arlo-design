@@ -21,7 +21,8 @@ const GlobalStyles = createGlobalStyle`
   
   body {
     margin: 0;
-    // font-size: 1.5rem;
+    background: url('repeating_triangles_extra_light.svg') fixed;
+    background-size: 75%;
   }
 
   button {

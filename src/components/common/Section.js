@@ -3,8 +3,9 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
 const bgColorMap = {
-  light: '#FFFFFF',
+  light: 'var(--light-gray)',
   dark: 'var(--dark-gray)',
+  none: 'transparent',
 };
 
 const Div = styled.div`
@@ -26,8 +27,22 @@ const Div = styled.div`
   }
 `;
 
-const TitleWrapper = styled.div`
+const HorizontalLine = styled.div`
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
   margin: 0 0 3rem 0;
+
+  div {
+    flex: 0 1 175px;
+    height: 5px;
+    background-color: var(--dark-blue);  
+  };
+`;
+
+const TitleWrapper = styled.div`
+  margin: 0 0 2rem 0;
 `;
 
 
@@ -37,6 +52,7 @@ const Section = props => (
       <h1>{props.title}</h1>
       <h2>{props.subtitle}</h2>
     </TitleWrapper>
+    <HorizontalLine><div /></HorizontalLine>
     {props.children}
   </Div>
 );
@@ -46,12 +62,13 @@ const { string } = PropTypes;
 Section.propTypes = {
   title: string,
   subtitle: string,
-  bgColor: string.isRequired,
+  bgColor: string,
 };
 
 Section.defaultProps = {
   title: '',
   subtitle: '',
+  bgColor: 'none',
 };
 
 export default Section;
