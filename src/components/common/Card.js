@@ -18,6 +18,10 @@ const Div = styled.div`
   border-radius: 10px;
   background-color: ${props => bgColorMap[props.bgColor]};
   padding: 1.5rem;
+  
+  > div {
+    width: 100%;
+  },
 `;
 
 const Card = props => (

@@ -36,24 +36,37 @@ const MainText = styled.div({
   },
 });
 
-const Title = styled.div`
-  font-size: 3rem;
-  margin: 0 0 1rem 0;
-  
-  svg {
-    width: 350px;
-  }
-`;
+const Title = styled.div({
+  fontSize: '3rem',
+  margin: '0 0 1rem 0',
 
-const Subtitle = styled.div`
-  font-size: 1.5rem;
-  margin: 0 0 2rem 0;
-`;
+  '& > svg': {
+    width: 350,
 
-const Text = styled.div`
-  font-size: 1.5rem;
-  line-height: 1.4;
-`;
+    ['@media' + mediaQueries.mediumWidth]: {
+      width: 300,
+    },
+  },
+});
+
+const Subtitle = styled.div({
+  fontSize: '1.5rem',
+
+  ['@media' + mediaQueries.mediumWidth]: {
+    fontSize: '1.2rem',
+  },
+
+  margin: '0 0 2rem 0',
+});
+
+const Text = styled.div({
+  fontSize: '1.5rem',
+  lineHeight: '1.4',
+
+  ['@media' + mediaQueries.mediumWidth]: {
+    margin: '0.5rem',
+  },
+});
 
 const SmallText = styled.div`
   font-size: 0.8rem;
@@ -76,6 +89,10 @@ const ImageDiv = styled.div({
 
 const Image = styled(Img)({
   margin: '3rem',
+
+  ['@media' + mediaQueries.mediumWidth]: {
+    margin: '3rem 2rem 2rem 2rem',
+  },
 });
 
 
@@ -96,9 +113,9 @@ const Hero = () => {
     <Div id='hero'>
       <MainText>
         <Title><Logo /></Title>
-        <Subtitle>Bespoke design and development services.</Subtitle>
+        <Subtitle>Bespoke design and development services</Subtitle>
         <Text>Let us create a website tailored to your needs.</Text>
-        <Text>Beautiful. Discoverable. Blazing fast.</Text>
+        <Text>Beautiful. Discoverable. <i>Blazing fast</i>.</Text>
         <SmallText>Proudly based in Vancouver since 2019</SmallText>
         <button onClick={() => scrollTo('#contact')}>Let's get started!</button>
       </MainText>

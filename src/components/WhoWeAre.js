@@ -6,32 +6,24 @@ import { Section } from './common';
 
 import mediaQueries from '../helpers/mediaQueries';
 
-const Div = styled.div({
-  display: 'grid',
-  gridTemplateColumns: '550px 400px',
-  gridTemplateAreas: `
-    'content image'
-  `,
+const Flex = styled.div({
+  display: 'flex',
+  flexFlow: 'row nowrap',
   justifyContent: 'center',
   alignItems: 'center',
-  gridGap: '1rem',
 
   ['@media' + mediaQueries.mediumWidth]: {
-    gridTemplateColumns: '1fr',
-    gridTemplateAreas: `
-      'image'
-      'content'
-    `,
-    justifyItems: 'center',
+    flexDirection: 'column-reverse',
   },
 });
 
 const MainText = styled.div({
-  gridArea: 'content',
-  margin: '0 1rem 0 2rem',
+  flex: '0 1 550px',
+  margin: '0 3rem 0 2rem',
 
   ['@media' + mediaQueries.mediumWidth]: {
-    margin: 0,
+    margin: '3rem 1rem 0rem 1rem',
+    flex: '0 0 auto',
     display: 'flex',
     flexFlow: 'column nowrap',
     justifyContent: 'center',
@@ -49,29 +41,30 @@ const Text = styled.div`
 `;
 
 const Image = styled(Img)({
-  gridArea: 'image',
-  width: '350px',
-  height: '300px',
+  flex: '0 0 350px',
+  maxHeight: 300,
   margin: '0 1rem',
-  justifySelf: 'center',
 
   ['@media' + mediaQueries.mediumWidth]: {
-    height: '250px',
+    // Specify 'maxWidth' rather than 'flex'
+    //  because parent changes to 'column' at breakpoint
+    maxWidth: 275,
+    maxHeight: 250,
   },
 });
 
 
 const WhoWeAre = () => (
   <Section id="who-we-are" title="Who we are">
-    <Div>
+    <Flex>
       <MainText>
         <Text>Arlo Design is a web design and development agency that works with you to enhance your online presence and help you <b>achieve your business goals</b>.</Text>
         <Text>We love to partner with small businesses like ourselves, working together to ensure every site has a <b>personal touch</b>.</Text>
         <Text>Above all else we value <b>trust, honesty and communication</b>. These three values underpin every project we do, ensuring we stay in touch and in sync <b>every step of the way</b>.</Text>
       </MainText>
 
-      <Image alt="Minions working together on a project" />
-    </Div>
+      <Image alt="A woman painting a giant screen" />
+    </Flex>
   </Section>
 );
 
