@@ -112,7 +112,7 @@ const Hero = () => {
   return (
     <Div id='hero'>
       <MainText>
-        <Title><Logo /></Title>
+        <Title><Logo alt="Arlo Design logo" /></Title>
         <Subtitle>Bespoke design and development services</Subtitle>
         <Text>Let us create a website tailored to your needs.</Text>
         <Text>Beautiful. Discoverable. <i>Blazing fast</i>.</Text>

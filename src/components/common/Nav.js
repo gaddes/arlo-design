@@ -34,7 +34,7 @@ const Nav = () => (
     <ul>
       <li>
         <Span onClick={() => scrollTo('#hero')}>
-          <Logo />
+          <Logo alt="Arlo Design logo" />
         </Span>
       </li>
       <li>
