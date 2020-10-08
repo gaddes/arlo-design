@@ -7,6 +7,7 @@ import mediaQueries from '../../helpers/mediaQueries';
 const Title = styled.div`
   margin: 0.5rem 0 1rem 0;
   text-align: center;
+  font-weight: 600;
 `;
 
 const StyledForm = styled.div({
@@ -27,6 +28,10 @@ const StyledForm = styled.div({
     flexFlow: 'column nowrap',
     justifyContent: 'flex-start',
     alignItems: 'stretch',
+  },
+
+  '& label': {
+    margin: '0.5rem 0.5rem 0 0.5rem',
   },
 
   '& input, textarea': {
@@ -62,10 +67,19 @@ const Form = () => (
       >
         {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
         <input type="hidden" name="form-name" value="contact" />
-        <input type="text" name="name" placeholder="Name" />
-        <input type="email" name="email" placeholder="Email" />
-        <input type="text" name="phone" placeholder="Phone number" />
-        <textarea name="query" placeholder="Tell us about your business" rows="10" />
+
+        <label htmlFor="name">Name</label>
+        <input type="text" name="name" placeholder="Jane Doe" />
+
+        <label htmlFor="email">Email</label>
+        <input type="email" name="email" placeholder="jane@mywebsite.ca" />
+
+        <label htmlFor="phone">Phone number</label>
+        <input type="text" name="phone" placeholder="(123) 456-7890" />
+
+        <label htmlFor="query">Tell us about your business</label>
+        <textarea name="query" placeholder="I'd love a shiny new website because..." rows="10" />
+        
         <button type="submit">Send</button>
       </form>
     </StyledForm>
