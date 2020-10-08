@@ -69,16 +69,16 @@ const Form = () => (
         <input type="hidden" name="form-name" value="contact" />
 
         <label htmlFor="name">Name</label>
-        <input type="text" name="name" placeholder="Jane Doe" />
+        <input type="text" id="name" name="name" placeholder="Jane Doe" />
 
         <label htmlFor="email">Email</label>
-        <input type="email" name="email" placeholder="jane@mywebsite.ca" />
+        <input type="email" id="email" name="email" placeholder="jane@mywebsite.ca" />
 
         <label htmlFor="phone">Phone number</label>
-        <input type="text" name="phone" placeholder="(123) 456-7890" />
+        <input type="text" id="phone" name="phone" placeholder="(123) 456-7890" />
 
         <label htmlFor="query">Tell us about your business</label>
-        <textarea name="query" placeholder="I'd love a shiny new website because..." rows="10" />
+        <textarea id="query" name="query" placeholder="I'd love a shiny new website because..." rows="10" />
         
         <button type="submit">Send</button>
       </form>
