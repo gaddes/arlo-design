@@ -14,7 +14,7 @@ const NavStyles = styled.nav`
     justify-content: space-between;
     align-items: center;
 
-    height: 50px;
+    height: 70px;
     margin: 0;
     padding: 0.5rem 2rem;
     list-style: none;
