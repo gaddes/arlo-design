@@ -43,7 +43,7 @@ Card.propTypes = {
 Card.defaultProps = {
   type: 'none',
   className: '',
-  bgColor: 'light',
+  bgColor: 'dark',
 };
 
 export default Card;

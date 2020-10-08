@@ -41,7 +41,7 @@ const Content = styled.div`
 `;
 
 const Card = ({ Img, ...props }) => (
-  <BaseCard bgColor="light">
+  <BaseCard>
     <Image>
       <Img alt={props.alt} />
     </Image>
