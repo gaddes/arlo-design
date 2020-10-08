@@ -5,12 +5,18 @@
  */
 
 module.exports = {
-  /* Your site config here */
+  siteMetadata: {
+    title: 'Arlo Design',
+    siteUrl: 'https://www.arlodesign.ca/',
+    description: 'Bespoke design and development services',
+  },
+  // Your site config here
   plugins: [
     'gatsby-plugin-styled-components',
     'gatsby-plugin-smoothscroll',
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
+    'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
