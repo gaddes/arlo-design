@@ -7,7 +7,7 @@ import mediaQueries from '../../helpers/mediaQueries';
 const Title = styled.div`
   margin: 0.5rem 0 1rem 0;
   text-align: center;
-  font-weight: 600;
+  font-weight: 700;
 `;
 
 const StyledForm = styled.div({
