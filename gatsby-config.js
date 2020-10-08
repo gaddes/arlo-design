@@ -26,9 +26,22 @@ module.exports = {
       }
     },
     {
-      resolve: `gatsby-plugin-typography`,
+      resolve: 'gatsby-plugin-typography',
       options: {
-        pathToConfigModule: `src/utils/typography`,
+        pathToConfigModule: 'src/utils/typography',
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-gtag',
+      options: {
+        // Your google analytics tracking id
+        trackingId: 'UA-180200185-1',
+        // Puts tracking script in the head instead of the body
+        head: true,
+        // Enable IP anonymization
+        anonymize: true,
+        // Respect user's Do Not Track request
+        respectDNT: true,
       },
     },
   ],
