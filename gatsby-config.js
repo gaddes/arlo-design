@@ -8,7 +8,7 @@ module.exports = {
   siteMetadata: {
     title: 'Arlo Design',
     siteUrl: 'https://www.arlodesign.ca/',
-    description: 'Bespoke design and development services',
+    description: 'Bespoke design and development services in Vancouver, Canada',
   },
   // Your site config here
   plugins: [

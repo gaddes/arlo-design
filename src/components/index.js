@@ -5,6 +5,7 @@ import HowWeCanHelp from './HowWeCanHelp';
 import References from './References';
 import HowDoesItWork from './HowDoesItWork';
 import LetsGetStarted from './LetsGetStarted';
+import { SEO } from './common';
 
 export {
   Hero,
@@ -14,4 +15,5 @@ export {
   References,
   HowDoesItWork,
   LetsGetStarted,
+  SEO,
 };
