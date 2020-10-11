@@ -20,7 +20,7 @@ const SEO = props => {
       {props.location && <meta property="og:url" content={props.location.href} />}
       <meta property="og:image" content={props.image || `${siteMetadata.siteUrl}${siteMetadata.image}`} />
       <meta property="og:image:alt" content={props.alt || 'Arlo Design logo'} />
-      <meta property="og:title" content={props.title} />
+      <meta property="og:title" content={`${props.title} | ${siteMetadata.title}`} />
       <meta property="og:site_name" content={siteMetadata.title} />
       <meta property="og:description" content={props.description || siteMetadata.description} />
       <meta property="og:type" content={props.type || 'website'} />
