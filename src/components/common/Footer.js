@@ -9,7 +9,6 @@ const DivStyles = styled.div`
   align-items: center;
 
   font-size: 0.8rem;
-  height: 20px;
   background: var(--gray);
   margin: 0;
   padding: 0.5rem 2rem;
