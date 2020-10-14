@@ -11,19 +11,6 @@ const bgColorMap = {
 const Div = styled.div`
   background-color: ${props => bgColorMap[props.bgColor]};
   padding: 2rem;
-  
-  h1 {
-    margin: 0;
-    font-size: 2.5rem;
-    text-align: center;
-  }
-  
-  h2 {
-    margin: 1rem 0 0 0;
-    font-size: 1.2rem;
-    font-weight: 200;
-    text-align: center;
-  }
 `;
 
 const HorizontalLine = styled.div`
@@ -42,6 +29,19 @@ const HorizontalLine = styled.div`
 
 const TitleWrapper = styled.div`
   margin: 0 0 2rem 0;
+
+  > h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    text-align: center;
+  }
+  
+  > h2 {
+    margin: 1rem 0 0 0;
+    font-size: 1.2rem;
+    font-weight: 200;
+    text-align: center;
+  }
 `;
 
 
