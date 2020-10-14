@@ -102,7 +102,7 @@ const Hero = () => {
       image: file(relativePath: {eq: "screens.png"}) {
         childImageSharp {
           fluid(maxWidth: 650) {
-            ...GatsbyImageSharpFluid
+            ...GatsbyImageSharpFluid_tracedSVG
           }
         }
       }
