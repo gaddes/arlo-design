@@ -8,4 +8,8 @@
   Arlo Design
 </h1>
 
+## Production Status
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/36302202-038e-4f7d-9864-8148a826beac/deploy-status)](https://app.netlify.com/sites/arlo-design/deploys)
+
 
