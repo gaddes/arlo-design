@@ -31,6 +31,12 @@ const GlobalStyles = createGlobalStyle({
     backgroundSize: '75%',
   },
 
+  'h1, h2, h3, h4, h5, h6': {
+    fontFamily: 'inherit',
+    fontWeight: 'inherit',
+    margin: 0,
+  },
+
   button: {
     fontSize: 'inherit',
     border: 'none',
@@ -39,6 +45,14 @@ const GlobalStyles = createGlobalStyle({
     padding: '0.5rem 1rem',
     borderRadius: 5,
     cursor: 'pointer',
+  },
+
+  a: {
+    color: 'var(--dark-blue)',
+
+    '&:hover': {
+      color: 'black',
+    }
   },
 });
 

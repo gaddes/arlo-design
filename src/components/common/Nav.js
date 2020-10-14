@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'gatsby';
 import scrollTo from 'gatsby-plugin-smoothscroll';
 import styled from 'styled-components';
 
@@ -22,8 +23,6 @@ const NavStyles = styled.nav`
 `;
 
 const Span = styled.span`
-  cursor: pointer;
-
   svg {
     width: 150px;
   }
@@ -33,8 +32,10 @@ const Nav = () => (
   <NavStyles>
     <ul>
       <li>
-        <Span onClick={() => scrollTo('#hero')}>
-          <Logo alt="Arlo Design logo" />
+        <Span>
+          <Link to="/">
+            <Logo alt="Arlo Design logo" />
+          </Link>
         </Span>
       </li>
       <li>

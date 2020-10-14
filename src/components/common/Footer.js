@@ -1,11 +1,12 @@
 import React from 'react';
+import { Link } from 'gatsby';
 
 import styled from 'styled-components';
 
-const DivStyles = styled.div`
+const Div = styled.div`
   display: flex;
   flex-flow: row nowrap;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 
   font-size: 0.8rem;
@@ -16,7 +17,10 @@ const DivStyles = styled.div`
 
 const Footer = () => {
   return (
-    <DivStyles>Arlo Design &#169; {new Date().getFullYear()}</DivStyles>
+    <Div>
+      <div>Arlo Design &#169; {new Date().getFullYear()}</div>
+      <Link to="/terms">Ts & Cs</Link>
+    </Div>
   );
 };
 
