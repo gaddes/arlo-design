@@ -2,7 +2,7 @@
 <svg viewBox="74.476 183.25 360.175 100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
   <defs>
     <clipPath id="clip-0">
-      <rect x="0.57" y="136.644" width="370" height="100" style="fill: rgb(216, 216, 216);"/>
+      <rect x="0.57" y="136.644" width="370" height="100" style="fill: none; stroke: none;"/>
     </clipPath>
     <symbol overflow="visible" id="glyph0-1">
       <path style="stroke:none;" d="M 87.265625 0 L 77.53125 0 L 46.0625 -63.296875 L 18.96875 -7.859375 L 55.6875 -7.859375 L 61.046875 0 L 5.25 0 L 46.0625 -82.015625 Z M 87.265625 0 "/>

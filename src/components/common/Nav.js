@@ -1,5 +1,7 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import { Link, useStaticQuery, graphql } from 'gatsby';
+// TODO: delete me!
+import Image from 'gatsby-image';
 import scrollTo from 'gatsby-plugin-smoothscroll';
 import styled from 'styled-components';
 
@@ -28,21 +30,44 @@ const Span = styled.span`
   }
 `;
 
-const Nav = () => (
-  <NavStyles>
-    <ul>
-      <li>
-        <Span>
-          <Link to="/">
-            <Logo alt="Arlo Design logo" />
-          </Link>
-        </Span>
-      </li>
-      <li>
-        <button onClick={() => scrollTo('#contact')}>Contact</button>
-      </li>
-    </ul>
-  </NavStyles>
-);
+const Nav = () => {
+  // TODO: delete me!
+  const data = useStaticQuery(graphql`
+    query {
+      image: file(relativePath: {eq: "logo_text.png"}) {
+        childImageSharp {
+          fluid(maxWidth: 1200) {
+            ...GatsbyImageSharpFluid_tracedSVG
+          }
+        }
+      }
+    }
+  `);
+
+  return (
+    <NavStyles>
+      <ul>
+        <li>
+          <Span>
+            <Link to="/">
+              <Logo alt="Arlo Design logo" />
+            </Link>
+
+            {/* TODO: delete me! AND logo_text.png */}
+            {/*<Link to="/">*/}
+            {/*  <Image*/}
+            {/*    fluid={data.image.childImageSharp.fluid}*/}
+            {/*    alt="Arlo Design logo"*/}
+            {/*  />*/}
+            {/*</Link>*/}
+          </Span>
+        </li>
+        <li>
+          <button onClick={() => scrollTo('#contact')}>Contact</button>
+        </li>
+      </ul>
+    </NavStyles>
+  );
+};
 
 export default Nav;
