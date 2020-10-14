@@ -48,7 +48,7 @@ const GlobalStyles = createGlobalStyle({
   },
 
   a: {
-    color: 'var(--dark-blue)',
+    color: 'black',
 
     '&:hover': {
       color: 'black',
