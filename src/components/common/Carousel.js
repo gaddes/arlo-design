@@ -30,6 +30,7 @@ const Carousel = props => (
     <BaseCarousel
       showArrows={false}
       showStatus={false}
+      showThumbs={false}
       dynamicHeight
       useKeyboardArrows
       emulateTouch

@@ -16,16 +16,12 @@ const Grid = styled.div({
   display: 'grid',
   gridTemplateColumns: '450px 450px',
   gridGap: '2rem',
-  justifyItems: 'center',
   justifyContent: 'center',
+  justifyItems: 'center',
 
   ['@media' + mediaQueries.mediumWidth]: {
     gridTemplateColumns: '450px',
   },
-
-  ['@media' + mediaQueries.smallWidth]: {
-    gridTemplateColumns: '1fr',
-  }
 });
 
 const Flex = styled.div`
@@ -37,7 +33,7 @@ const Flex = styled.div`
   }
 `;
 
-const cardData = [
+const data = [
   {
     title: 'Design',
     image: Design,
@@ -101,12 +97,12 @@ const WhatWeDo = () => {
       {isMediumScreen
         ? <Flex>
             <Carousel>
-              {createCards(cardData)}
+              {createCards(data)}
             </Carousel>
           </Flex>
 
         : <Grid>
-            {createCards(cardData)}
+            {createCards(data)}
           </Grid>
       }
     </Section>

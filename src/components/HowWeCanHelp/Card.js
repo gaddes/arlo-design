@@ -6,10 +6,6 @@ import { Card as BaseCard } from '../common';
 
 import mediaQueries from '../../helpers/mediaQueries';
 
-const StyledCard = styled(BaseCard)({
-  maxWidth: 500,
-});
-
 const Div = styled.div({
   display: 'grid',
   gridTemplateColumns: '1fr 200px',
@@ -23,12 +19,16 @@ const Title = styled.div`
   font-size: 1.2rem;
 `;
 
-const Line = styled.div`
-  width: 60px;
-  height: 3px;
-  background-color: var(--dusty-blue);
-  margin: 12px 0;
-`;
+const Line = styled.div({
+  width: 60,
+  height: 3,
+  backgroundColor: 'var(--dusty-blue)',
+  margin: '12px 0',
+
+  ['@media' + mediaQueries.mediumWidth]: {
+    margin: '12px auto',
+  },
+});
 
 const Image = styled.div({
   display: 'flex',
@@ -52,7 +52,7 @@ const Image = styled.div({
 });
 
 const Card = ({ Img, ...props }) => (
-  <StyledCard>
+  <BaseCard>
     <Div>
       <div>
         <Title>{props.title}</Title>
@@ -63,7 +63,7 @@ const Card = ({ Img, ...props }) => (
         <Img alt={props.alt} />
       </Image>
     </Div>
-  </StyledCard>
+  </BaseCard>
 );
 
 const { shape, arrayOf, oneOfType, string, element } = PropTypes;
