@@ -1,10 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
-import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from 'pure-react-carousel';
-import 'pure-react-carousel/dist/react-carousel.es.css';
 
-import { Section } from '../common';
+import { Section, Carousel } from '../common';
 import Card from './Card';
 
 import Design from '../../assets/work_together.svg';
@@ -30,19 +28,19 @@ const Grid = styled.div({
   }
 });
 
-const Flex = styled.div({
-  display: 'flex',
-  flexFlow: 'row nowrap',
-  justifyContent: 'center',
-  alignItems: 'flex-start',
+const Flex = styled.div`
+  > * {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: flex-start;
+  }
+`;
 
-  '> .carousel': {
-    flex: '0 1 450px',
-  },
-});
-
+// TODO: create 'createCard' function that accepts plain data and returns Card
 const cards = [
   <Card
+    index={0}
     title="Design"
     Img={Design}
     alt="Designers hard at work"
@@ -52,6 +50,7 @@ const cards = [
   </Card>,
 
   <Card
+    index={1}
     title="Development"
     Img={Dev}
     alt="A programmer with six screens"
@@ -61,6 +60,7 @@ const cards = [
   </Card>,
 
   <Card
+    index={2}
     title="Branding"
     Img={Brand}
     alt="A man choosing a colour palette"
@@ -70,6 +70,7 @@ const cards = [
   </Card>,
 
   <Card
+    index={3}
     title="SEO"
     Img={Seo}
     alt="A woman with a giant magnifying glass"
@@ -87,21 +88,9 @@ const WhatWeDo = () => {
     <Section title="What we do">
       {isMediumScreen
         ? <Flex>
-          <CarouselProvider
-            naturalSlideWidth={100}
-            naturalSlideHeight={115}
-            totalSlides={4}
-          >
-            <Slider>
-              {cards.map((card, idx) => (
-                <Slide index={idx}>
-                  {card}
-                </Slide>
-              ))}
-            </Slider>
-            <ButtonBack>Back</ButtonBack>
-            <ButtonNext>Next</ButtonNext>
-          </CarouselProvider>
+            <Carousel>
+              {cards.map(card => card)}
+            </Carousel>
           </Flex>
 
         : <Grid>

@@ -27,27 +27,31 @@ const ContentWrapper = styled.div`
 const Card = ({ Img, ...props }) => (
   <BaseCard>
     <Title>{props.title}</Title>
-    <Image>
+    <Image className={props.imageClassName}>
       <Img alt={props.alt}/>
     </Image>
-    <ContentWrapper>
+    <ContentWrapper className={props.contentClassName}>
       {props.children}
     </ContentWrapper>
   </BaseCard>
 );
 
-const { shape, arrayOf, oneOfType, string, element } = PropTypes;
+const { shape, arrayOf, oneOfType, string, func } = PropTypes;
 
 Card.propTypes = {
   children: oneOfType([shape({}), arrayOf(shape({}))]).isRequired,
-  Img: element.isRequired,
+  Img: func.isRequired,
   title: string,
   alt: string,
+  contentClassName: string,
+  imageClassName: string,
 };
 
 Card.defaultProps = {
   title: '',
   alt: '',
+  contentClassName: '',
+  imageClassName: '',
 };
 
 export default Card;
