@@ -107,6 +107,6 @@ const HowWeCanHelp = () => {
       }
     </Section>
   );
-}
+};
 
 export default HowWeCanHelp;

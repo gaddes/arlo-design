@@ -4,15 +4,22 @@ import styled from 'styled-components';
 
 import { Card as BaseCard } from '../common';
 
-const Image = styled.div`
-  float: right;
-  margin: 0 0 1rem 1rem;
-  
-  svg {
-    width: 200px;
-    height: 150px;
-  }
-`;
+import mediaQueries from '../../helpers/mediaQueries';
+
+const Image = styled.div({
+  float: 'right',
+  margin: '0 0 1rem 1rem',
+
+  '& svg': {
+    width: 200,
+    height: 150,
+
+    ['@media' + mediaQueries.mediumWidth]: {
+      width: 140,
+      height: 120,
+    },
+  },
+});
 
 const Title = styled.div`
   font-size: 1.5rem;
@@ -66,7 +73,6 @@ Card.defaultProps = {
   title: '',
   subtitle: '',
   alt: '',
-
 };
 
 export default Card;

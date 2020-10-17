@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import { Carousel as BaseCarousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
@@ -17,6 +18,7 @@ const StyledCarousel = styled.div({
     // Default background is black
     background: 'transparent',
     padding: '0 0.5rem',
+    textAlign: props => props.alignLeft && 'left',
   },
 
   '.control-dots > .dot': {
@@ -26,7 +28,7 @@ const StyledCarousel = styled.div({
 });
 
 const Carousel = props => (
-  <StyledCarousel>
+  <StyledCarousel alignLeft={props.alignLeft}>
     <BaseCarousel
       showArrows={false}
       showStatus={false}
@@ -40,5 +42,15 @@ const Carousel = props => (
     </BaseCarousel>
   </StyledCarousel>
 );
+
+const { bool } = PropTypes;
+
+Carousel.propTypes = {
+  alignLeft: bool,
+};
+
+Carousel.defaultProps = {
+  alignLeft: false,
+};
 
 export default Carousel;
