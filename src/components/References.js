@@ -66,10 +66,10 @@ const References = () => (
       </Image>
       <CardWrapper>
         <Card>
-          <div>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor" - Person X, Company Y</div>
+          <div><i>"My site was slick, well designed and most importantly to me - easy to use. It fit my brand perfectly and suited me as a small, independent business"</i> - Catherine Isaac, BrightBox Speech and Language Therapy</div>
         </Card>
         <Card>
-          <div>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor" - Person X, Company Y</div>
+          <div><i>"The final product came out better than I could have ever imagined […] concise, speedy and thorough approach to website design services"</i> - Tim Sportschuetz, Sportschuetz & Company</div>
         </Card>
       </CardWrapper>
     </Flex>
