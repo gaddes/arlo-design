@@ -60,8 +60,7 @@ const Form = () => (
         id='contact'
         name='contact'
         method='post'
-        // TODO: choose where to go after submit
-        action='/'
+        action='/contact/success' // Navigate here after successful submission
         // TODO: set up honeypot and additional spam prevention?
         // data-netlify-honeypot='bot-field'
       >

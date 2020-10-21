@@ -37,7 +37,7 @@ const GlobalStyles = createGlobalStyle({
     margin: 0,
   },
 
-  button: {
+  'button, .button': {
     fontSize: 'inherit',
     border: 'none',
     boxShadow: '1px 1px 5px 0 rgba(0,0,0,0.25)',
