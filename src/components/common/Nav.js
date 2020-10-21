@@ -44,6 +44,7 @@ const Nav = () => {
         <AnchorLink
           to="/#contact"
           className="button"
+          stripHash
         >
           Contact
         </AnchorLink>
