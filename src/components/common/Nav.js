@@ -3,6 +3,7 @@ import { Link, useStaticQuery, graphql } from 'gatsby';
 import Image from 'gatsby-image';
 import scrollTo from 'gatsby-plugin-smoothscroll';
 import styled from 'styled-components';
+import Headroom from 'react-headroom';
 
 const NavStyles = styled.nav`
   background-color: var(--light-gray);
@@ -32,15 +33,17 @@ const Nav = () => {
   `);
 
   return (
-    <NavStyles>
-      <Link to="/">
-        <Image
-          fixed={data.image.childImageSharp.fixed}
-          alt="Arlo Design logo"
-        />
-      </Link>
-      <button onClick={() => scrollTo('#contact')}>Contact</button>
-    </NavStyles>
+    <Headroom>
+      <NavStyles>
+        <Link to="/">
+          <Image
+            fixed={data.image.childImageSharp.fixed}
+            alt="Arlo Design logo"
+          />
+        </Link>
+        <button onClick={() => scrollTo('#contact')}>Contact</button>
+      </NavStyles>
+    </Headroom>
   );
 };
 
