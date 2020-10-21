@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, useStaticQuery, graphql } from 'gatsby';
 import Image from 'gatsby-image';
-import scrollTo from 'gatsby-plugin-smoothscroll';
+import { AnchorLink } from 'gatsby-plugin-anchor-links';
 import styled from 'styled-components';
 import Headroom from 'react-headroom';
 
@@ -41,7 +41,12 @@ const Nav = () => {
             alt="Arlo Design logo"
           />
         </Link>
-        <button onClick={() => scrollTo('#contact')}>Contact</button>
+        <AnchorLink
+          to="/#contact"
+          className="button"
+        >
+          Contact
+        </AnchorLink>
       </NavStyles>
     </Headroom>
   );
