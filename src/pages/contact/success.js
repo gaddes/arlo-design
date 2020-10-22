@@ -3,10 +3,6 @@ import { Link } from 'gatsby';
 import styled from 'styled-components';
 
 const Flex = styled.div`
-  // Because content is small, we want the container to fill screen.
-  // This ensures the footer remains 'sticky' at bottom of page.
-  flex: 1;
-
   display: flex;
   flex-flow: column nowrap;
   justify-content: flex-start;
