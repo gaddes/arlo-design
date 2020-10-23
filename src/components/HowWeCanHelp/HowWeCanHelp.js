@@ -41,6 +41,7 @@ const Em = styled.i`
 
 const cards = [
   <Card
+    key="Analytics"
     title="Analytics"
     Img={Analytics}
     alt="Woman drawing a graph on a whiteboard"
@@ -49,6 +50,7 @@ const cards = [
   </Card>,
 
   <Card
+    key="Growth"
     title="Growth"
     Img={Growth}
     alt="Woman standing next to a bar chart"
@@ -57,6 +59,7 @@ const cards = [
   </Card>,
 
   <Card
+    key="Branding"
     title="Branding"
     Img={Brand}
     alt="Man stood next to a logo"
@@ -65,6 +68,7 @@ const cards = [
   </Card>,
 
   <Card
+    key="Discoverability"
     title="Discoverability"
     Img={Discover}
     alt="An office with a location marker above"
@@ -73,6 +77,7 @@ const cards = [
   </Card>,
 
   <Card
+    key="Enhanced presence"
     title="Enhanced presence"
     Img={Presence}
     alt="A computer screen with content flowing in"
@@ -81,6 +86,7 @@ const cards = [
   </Card>,
 
   <Card
+    key="Personal touch"
     title="Personal touch"
     Img={Personal}
     alt="A woman holding a heart-shaped balloon"

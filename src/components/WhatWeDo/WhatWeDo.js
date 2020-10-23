@@ -84,7 +84,7 @@ const createCards = data => (
       Img={card.image}
       alt={card.alt}
     >
-      {card.content.map(item => <div>{item}</div>)}
+      {card.content.map(item => <div key={item}>{item}</div>)}
     </Card>
   ))
 );

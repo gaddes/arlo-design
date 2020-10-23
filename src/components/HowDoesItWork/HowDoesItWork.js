@@ -81,6 +81,7 @@ const Scroll = styled.span`
 
 const cards = [
   <Card
+    key="Step 1"
     title="Step 1"
     subtitle="consultation"
     Img={Consult}
@@ -96,6 +97,7 @@ const cards = [
   </Card>,
 
   <Card
+    key="Step 2"
     title="Step 2"
     subtitle="scope & budget"
     Img={Scope}
@@ -113,6 +115,7 @@ const cards = [
   </Card>,
 
   <Card
+    key="Step 3"
     title="Step 3"
     subtitle="design"
     Img={Design}
@@ -126,6 +129,7 @@ const cards = [
   </Card>,
 
   <Card
+    key="Step 4"
     title="Step 4"
     subtitle="development"
     Img={Dev}
@@ -138,6 +142,7 @@ const cards = [
   </Card>,
 
   <Card
+    key="Step 5"
     title="Step 5"
     subtitle="complete"
     Img={Complete}
