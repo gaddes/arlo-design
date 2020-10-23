@@ -13,13 +13,20 @@ const Div = styled.div`
   background: var(--gray);
   margin: 0;
   padding: 0.5rem 2rem;
+  
+  > .footer-links > * {
+    margin: 0 0 0 1rem;
+  }
 `;
 
 const Footer = () => {
   return (
     <Div>
       <div>Arlo Design &#169; {new Date().getFullYear()}</div>
-      <Link to="/terms">Ts & Cs</Link>
+      <div className="footer-links">
+        <Link to="/blog">Blog</Link>
+        <Link to="/terms">Ts & Cs</Link>
+      </div>
     </Div>
   );
 };
