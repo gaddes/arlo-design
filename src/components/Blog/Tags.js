@@ -27,7 +27,10 @@ const toggleTag = (name, activeTags, setActiveTags) => {
 const StyledTag = styled.span`
   margin: 0 0.5rem;
   padding: 0.2rem 0.5rem;
-  background: ${props => props.active && 'var(--golden-yellow)'};
+  background: ${props => props.active
+    ? 'var(--orange)'
+    : 'var(--pale-yellow)'
+  };
   border: 1px solid var(--dusty-blue);
   border-radius: 1rem;
   cursor: pointer;
