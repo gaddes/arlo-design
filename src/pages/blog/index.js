@@ -51,8 +51,11 @@ const Excerpt = styled.div`
   }
 `;
 
-const Tag = ({ name }) => (
-  <span>{`#${name}`}</span>
+const Tag = ({ name, count }) => (
+  // TODO: this should be a button for semantics (without styles)
+  //  or possibly add type="button"?
+  // TODO: toggle active in state with click handler
+  <span onClick={() => console.log(name)}>{`#${name} [${count}]`}</span>
 );
 
 const ExcerptTags = ({ tags }) => {
@@ -87,7 +90,13 @@ export default function BlogLandingPage({ data }) {
           <h1>Blog</h1>
           <h2>Whatever pops into my head...</h2>
           <HashTags>
-            {uniqTags.map(tag => <Tag key={tag} name={tag} />)}
+            {uniqTags.map(tag => (
+              <Tag
+                key={tag}
+                name={tag}
+                count={tagsCount[tag]}
+              />
+            ))}
           </HashTags>
         </PageTitle>
         {blogs.map(({ node }) => (
