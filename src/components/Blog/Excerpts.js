@@ -6,6 +6,11 @@ import difference from 'lodash/difference';
 
 import { Card } from '../common';
 
+const Div = styled.div`
+  align-self: center;
+  max-width: 800px;
+`;
+
 const Excerpt = styled.div`
   .excerpt-title {
     display: flex;
@@ -38,9 +43,9 @@ ExcerptTags.defaultProps = {
   tags: [],
 };
 
-const BlogExcerpts = ({ blogs, activeTags }) => {
-  return (
-    blogs.map(({ node }) => {
+const BlogExcerpts = ({ blogs, activeTags }) => (
+  <Div>
+    {blogs.map(({ node }) => {
       const { tags } = node.frontmatter;
 
       // If user has selected one or more active tags, and the current blog post
@@ -52,7 +57,7 @@ const BlogExcerpts = ({ blogs, activeTags }) => {
       return (
         <Card
           key={node.id}
-          style={{ margin: '1rem 0' }}
+          style={{ margin: '1.5rem 0' }}
         >
           <Excerpt key={node.id}>
             <Link
@@ -68,9 +73,9 @@ const BlogExcerpts = ({ blogs, activeTags }) => {
           </Excerpt>
         </Card>
       )
-    })
-  );
-};
+    })}
+  </Div>
+);
 
 BlogExcerpts.propTypes = {
   blogs: arrayOf(shape({})).isRequired,
