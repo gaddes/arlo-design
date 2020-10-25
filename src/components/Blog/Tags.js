@@ -12,14 +12,6 @@ const Tags = styled.div`
   justify-content: center;
   align-items: center;
   margin: 1rem 0;
-
-  > span {
-    margin: 0 0.5rem;
-    padding: 0.2rem 0.5rem;
-    // TODO: bgColor should depend on "active" state
-    background: var(--golden-yellow);
-    border-radius: 1rem;
-  }
 `;
 
 const toggleTag = (name, activeTags, setActiveTags) => {
@@ -32,14 +24,26 @@ const toggleTag = (name, activeTags, setActiveTags) => {
   }
 };
 
-const Tag = props => (
+const StyledTag = styled.span`
+  margin: 0 0.5rem;
+  padding: 0.2rem 0.5rem;
+  background: ${props => props.active && 'var(--golden-yellow)'};
+  border: 1px solid var(--dusty-blue);
+  border-radius: 1rem;
+  cursor: pointer;
+`;
+
+const Tag = ({ name, count, activeTags, setActiveTags }) => (
   // TODO: this should be a button for semantics (without styles)
   //  or possibly add type="button"?
   // TODO: toggle active in state with click handler
   // TODO: simplify these args?
-  <span onClick={() => toggleTag(props.name, props.activeTags, props.setActiveTags)}>
-    {`#${props.name} [${props.count}]`}
-  </span>
+  <StyledTag
+    onClick={() => toggleTag(name, activeTags, setActiveTags)}
+    active={activeTags.includes(name)}
+  >
+    {`#${name} [${count}]`}
+  </StyledTag>
 );
 
 const { arrayOf, string, shape, number, func } = PropTypes;
