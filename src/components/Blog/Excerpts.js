@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
-import intersection from 'lodash/intersection';
+import difference from 'lodash/difference';
 
 import { Card } from '../common';
 
@@ -42,14 +42,12 @@ const BlogExcerpts = ({ blogs, activeTags }) => {
   return (
     blogs.map(({ node }) => {
       const { tags } = node.frontmatter;
-      // intersection() returns an array of unique values common to both input arrays
-      const visibleTags = intersection(tags, activeTags);
 
-      // If user has selected one or more active tags, but none of them match
-      //  the tags for this particular blog post, return null.
+      // If user has selected one or more active tags, and the current blog post
+      //  doesn't include every active tag, return null.
       // If the array of activeTags is empty, this means the user has not
-      //  filtered the blogs and we should display all
-      if (activeTags.length && !visibleTags.length) return null;
+      //  filtered the blogs and we should display all.
+      if (activeTags.length && difference(activeTags, tags).length) return null;
 
       return (
         <Card
