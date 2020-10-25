@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import difference from 'lodash/difference';
 
 import { Card } from '../common';
+import useSiteMetadata from '../../hooks/useSiteMetadata';
 
 const Div = styled.div`
   align-self: center;
@@ -43,39 +44,59 @@ ExcerptTags.defaultProps = {
   tags: [],
 };
 
-const BlogExcerpts = ({ blogs, activeTags }) => (
-  <Div>
-    {blogs.map(({ node }) => {
-      const { tags } = node.frontmatter;
+const BlogExcerpts = ({ blogs, activeTags }) => {
+  const siteMetadata = useSiteMetadata();
 
-      // If user has selected one or more active tags, and the current blog post
-      //  doesn't include every active tag, return null.
-      // If the array of activeTags is empty, this means the user has not
-      //  filtered the blogs and we should display all.
-      if (activeTags.length && difference(activeTags, tags).length) return null;
-
-      return (
-        <Card
-          key={node.id}
-          style={{ margin: '1.5rem 0' }}
+  if (!blogs.length) {
+    return (
+      <Div  style={{ marginTop: '1rem' }}>
+        <span>There are no blogs yet... if you'd like to request one, let us know at</span>
+        {' '}
+        <a
+          href={`mailto:${siteMetadata.email}`}
+          style={{ textDecoration: 'underline' }}
         >
-          <Excerpt key={node.id}>
-            <Link
-              to={node.fields.slug}
-            >
-              <div className="excerpt-title">
-                <h3>{node.frontmatter.title}</h3>
-                <ExcerptTags tags={tags} />
-              </div>
-              <div>{node.frontmatter.date}</div>
-              <div>{node.excerpt}</div>
-            </Link>
-          </Excerpt>
-        </Card>
-      )
-    })}
-  </Div>
-);
+          {siteMetadata.email}
+        </a>
+        {'.'}
+      </Div>
+    );
+  }
+
+  return (
+    <Div>
+      {blogs.map(({ node }) => {
+        const { tags } = node.frontmatter;
+
+        // If user has selected one or more active tags, and the current blog post
+        //  doesn't include every active tag, return null.
+        // If the array of activeTags is empty, this means the user has not
+        //  filtered the blogs and we should display all.
+        if (activeTags.length && difference(activeTags, tags).length) return null;
+
+        return (
+          <Card
+            key={node.id}
+            style={{ margin: '1.5rem 0' }}
+          >
+            <Excerpt key={node.id}>
+              <Link
+                to={node.fields.slug}
+              >
+                <div className="excerpt-title">
+                  <h3>{node.frontmatter.title}</h3>
+                  <ExcerptTags tags={tags} />
+                </div>
+                <div>{node.frontmatter.date}</div>
+                <div>{node.excerpt}</div>
+              </Link>
+            </Excerpt>
+          </Card>
+        )
+      })}
+    </Div>
+  );
+}
 
 BlogExcerpts.propTypes = {
   blogs: arrayOf(shape({})).isRequired,

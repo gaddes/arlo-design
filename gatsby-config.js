@@ -10,6 +10,7 @@ module.exports = {
     siteUrl: 'https://www.arlodesign.ca/',
     description: 'Bespoke design and development services in Vancouver, Canada',
     image: '/logo_circle.png',
+    email: 'matt@arlodesign.ca',
   },
   // Your site config here
   plugins: [
