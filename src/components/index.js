@@ -6,6 +6,7 @@ import References from './References';
 import HowDoesItWork from './HowDoesItWork';
 import LetsGetStarted from './LetsGetStarted';
 import { SEO, Section } from './common';
+import Blog from './Blog';
 
 export {
   Hero,
@@ -17,4 +18,5 @@ export {
   LetsGetStarted,
   SEO,
   Section,
+  Blog,
 };
