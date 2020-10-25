@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useStaticQuery, graphql, Link } from 'gatsby';
 import styled from 'styled-components';
 import flatten from 'lodash/flatten';
@@ -56,6 +56,8 @@ const Blog = () => {
   // Array with only one of each hashtag
   const uniqTags = uniq(hashtags);
 
+  const [activeTags, setActiveTags] = useState([]);
+
   return (
     <>
       <Div>
@@ -63,9 +65,12 @@ const Blog = () => {
         <Tags
           tags={uniqTags}
           tagsCount={tagsCount}
+          activeTags={activeTags}
+          setActiveTags={setActiveTags}
         />
         <Excerpts
           blogs={blogs}
+          activeTags={activeTags}
         />
       </Div>
     </>

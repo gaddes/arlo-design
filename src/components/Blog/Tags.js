@@ -2,6 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
+import noop from 'lodash/noop';
+import without from 'lodash/without';
+import concat from 'lodash/concat';
+
 const Tags = styled.div`
   display: flex;
   flex-flow: row wrap;
@@ -18,28 +22,49 @@ const Tags = styled.div`
   }
 `;
 
-const Tag = ({ name, count }) => (
+const toggleTag = (name, activeTags, setActiveTags) => {
+  if (activeTags.includes(name)) {
+    const newActiveTags = without(activeTags, name);
+    setActiveTags(newActiveTags);
+  } else {
+    const newActiveTags = concat(activeTags, name);
+    setActiveTags(newActiveTags);
+  }
+};
+
+const Tag = props => (
   // TODO: this should be a button for semantics (without styles)
   //  or possibly add type="button"?
   // TODO: toggle active in state with click handler
-  <span onClick={() => console.log(name)}>{`#${name} [${count}]`}</span>
+  // TODO: simplify these args?
+  <span onClick={() => toggleTag(props.name, props.activeTags, props.setActiveTags)}>
+    {`#${props.name} [${props.count}]`}
+  </span>
 );
 
-const { arrayOf, string, shape, number } = PropTypes;
+const { arrayOf, string, shape, number, func } = PropTypes;
 
 Tag.propTypes = {
   name: string,
   count: number,
+  activeTags: arrayOf(string),
+  setActiveTags: func,
 };
 
-const BlogTags = ({ tags, tagsCount }) => {
+Tag.defaultProps = {
+  activeTags: [],
+  setActiveTags: noop,
+};
+
+const BlogTags = props => {
   return (
     <Tags>
-      {tags.map(tag => (
+      {props.tags.map(tag => (
         <Tag
           key={tag}
           name={tag}
-          count={tagsCount[tag]}
+          count={props.tagsCount[tag]}
+          {...props}
         />
       ))}
     </Tags>
