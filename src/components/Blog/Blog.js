@@ -31,6 +31,8 @@ const Blog = () => {
   // Object where key = tag, value = count (number of times tag occurs)
   const tagsCount = countBy(hashtags);
 
+  // TODO: Could possibly simplify this component by creating
+  //  a new node using this logic in gatsby-node.js?
   // Array with only one of each hashtag
   const uniqTags = uniq(hashtags);
 
