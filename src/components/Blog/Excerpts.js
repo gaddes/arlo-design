@@ -88,23 +88,21 @@ const BlogExcerpts = ({ blogs, activeTags }) => {
                 animate={{ y: 0, opacity: 1 }}
                 exit={{ x: 100, opacity: 0 }}
               >
-                <Card
-                  key={node.id}
-                  style={{ margin: '1.5rem 0' }}
-                >
-                  <Excerpt key={node.id}>
-                    <Link
-                      to={node.fields.slug}
-                    >
+                <Link to={node.fields.slug}>
+                  <Card
+                    key={node.id}
+                    style={{ margin: '1.5rem 0' }}
+                  >
+                    <Excerpt key={node.id}>
                       <div className="excerpt-title">
                         <h3>{node.frontmatter.title}</h3>
                         <ExcerptTags tags={tags}/>
                       </div>
                       <div className="excerpt-date">{node.frontmatter.date}</div>
                       <div>{node.excerpt}</div>
-                    </Link>
-                  </Excerpt>
-                </Card>
+                    </Excerpt>
+                  </Card>
+                </Link>
               </motion.div>
             }
           </AnimatePresence>
