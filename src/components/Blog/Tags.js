@@ -11,7 +11,7 @@ const Tags = styled.div`
   flex-flow: row wrap;
   justify-content: center;
   align-items: center;
-  margin: 1rem 0;
+  margin: 1rem 0 0 0;
 `;
 
 const toggleTag = (name, activeTags, setActiveTags) => {
@@ -25,7 +25,7 @@ const toggleTag = (name, activeTags, setActiveTags) => {
 };
 
 const StyledTag = styled.span`
-  margin: 0 0.5rem;
+  margin: 0 0.5rem 1rem 0.5rem;
   padding: 0.2rem 0.5rem;
   background: ${props => props.active
     ? 'var(--orange)'

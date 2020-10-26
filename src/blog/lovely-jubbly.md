@@ -1,11 +1,11 @@
 ---
-title: "Lovely"
+title: "Lovely Jubbly"
 date: "2025-08-10"
 tags: [javascript, foo]
 ---
 
-# Markdown
+Look at this markdown blog post, it works pretty well!
 
-### Lovely jubbly
+Here's some blurb about javascript...
 
-It works pretty well!
+And here's another sentence about foo!

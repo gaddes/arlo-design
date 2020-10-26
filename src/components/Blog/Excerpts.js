@@ -20,6 +20,10 @@ const Excerpt = styled.div`
     align-items: center;
   }
   
+  .excerpt-date {
+    margin: 0.5rem 0;
+  }
+  
   .excerpt-tag {
     margin: 0 0 0 0.5rem;
   }
@@ -87,7 +91,7 @@ const BlogExcerpts = ({ blogs, activeTags }) => {
                   <h3>{node.frontmatter.title}</h3>
                   <ExcerptTags tags={tags} />
                 </div>
-                <div>{node.frontmatter.date}</div>
+                <div className="excerpt-date">{node.frontmatter.date}</div>
                 <div>{node.excerpt}</div>
               </Link>
             </Excerpt>
