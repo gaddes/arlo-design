@@ -10,6 +10,7 @@ module.exports = {
     siteUrl: 'https://www.arlodesign.ca/',
     description: 'Bespoke design and development services in Vancouver, Canada',
     image: '/logo_circle.png',
+    email: 'matt@arlodesign.ca',
   },
   // Your site config here
   plugins: [
@@ -19,10 +20,19 @@ module.exports = {
     'gatsby-plugin-sharp',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-anchor-links',
+    'gatsby-transformer-remark',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
+        name: 'assets',
         path: `${__dirname}/src/assets/`,
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'blog',
+        path: `${__dirname}/src/blog/`,
       },
     },
     {

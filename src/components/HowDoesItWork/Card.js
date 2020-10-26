@@ -59,11 +59,11 @@ const Card = ({ Img, ...props }) => (
   </BaseCard>
 );
 
-const { shape, arrayOf, oneOfType, string, element } = PropTypes;
+const { shape, arrayOf, oneOfType, string, func } = PropTypes;
 
 Card.propTypes = {
   children: oneOfType([shape({}), arrayOf(shape({}))]).isRequired,
-  Img: element.isRequired,
+  Img: func.isRequired,
   title: string,
   subtitle: string,
   alt: string,
