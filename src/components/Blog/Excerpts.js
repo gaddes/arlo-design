@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
 import difference from 'lodash/difference';
+import { motion, AnimatePresence } from 'framer-motion';
 
 import { Card } from '../common';
 import useSiteMetadata from '../../hooks/useSiteMetadata';
@@ -72,31 +73,42 @@ const BlogExcerpts = ({ blogs, activeTags }) => {
       {blogs.map(({ node }) => {
         const { tags } = node.frontmatter;
 
-        // If user has selected one or more active tags, and the current blog post
-        //  doesn't include every active tag, return null.
-        // If the array of activeTags is empty, this means the user has not
-        //  filtered the blogs and we should display all.
-        if (activeTags.length && difference(activeTags, tags).length) return null;
+        // We have to check this const in return() statement to work correctly with framer motion 'exit' prop.
+        //  - !activeTags.length = user has NOT selected a filter, so we show ALL excerpts.
+        //  - !difference(activeTags, tags).length = activeTags and this excerpt's tags are exactly the same.
+        //    If user has selected one or more active tags, this excerpt must include them all to be visible.
+        const showExcerpt = !activeTags.length || !difference(activeTags, tags).length;
 
         return (
-          <Card
-            key={node.id}
-            style={{ margin: '1.5rem 0' }}
-          >
-            <Excerpt key={node.id}>
-              <Link
-                to={node.fields.slug}
+          <AnimatePresence>
+            {showExcerpt &&
+              <motion.div
+                key={node.id}
+                initial={{ y: 100, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                exit={{ x: 100, opacity: 0 }}
               >
-                <div className="excerpt-title">
-                  <h3>{node.frontmatter.title}</h3>
-                  <ExcerptTags tags={tags} />
-                </div>
-                <div className="excerpt-date">{node.frontmatter.date}</div>
-                <div>{node.excerpt}</div>
-              </Link>
-            </Excerpt>
-          </Card>
-        )
+                <Card
+                  key={node.id}
+                  style={{ margin: '1.5rem 0' }}
+                >
+                  <Excerpt key={node.id}>
+                    <Link
+                      to={node.fields.slug}
+                    >
+                      <div className="excerpt-title">
+                        <h3>{node.frontmatter.title}</h3>
+                        <ExcerptTags tags={tags}/>
+                      </div>
+                      <div className="excerpt-date">{node.frontmatter.date}</div>
+                      <div>{node.excerpt}</div>
+                    </Link>
+                  </Excerpt>
+                </Card>
+              </motion.div>
+            }
+          </AnimatePresence>
+        );
       })}
     </Div>
   );
