@@ -16,7 +16,7 @@ const BlogTitle = () => {
   return (
     <Title>
       <h1>Blog</h1>
-      <h2>Whatever pops into my head...</h2>
+      <h2>Things that interest us...</h2>
     </Title>
   );
 };
