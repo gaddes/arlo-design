@@ -15,7 +15,7 @@ const Content = styled.div`
   flex: 0 1 800px;
   width: 100%; // Required for mobile screens, not sure why 🤔
   
-  h1, h2 {
+  h1, h2, h3 {
     margin: 0 0 1rem 0;
   }
   
