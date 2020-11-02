@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
 import styled from 'styled-components';
 
@@ -18,7 +19,7 @@ const StyledForm = styled.div({
 
   margin: '2rem 1rem 1rem 1rem',
 
-  ['@media' + mediaQueries.mediumWidth]: {
+  [`@media${mediaQueries.mediumWidth}`]: {
     margin: '2rem 0 1rem 0',
   },
 
@@ -50,17 +51,16 @@ const StyledForm = styled.div({
   },
 });
 
-
 const Form = () => (
   <Card>
-    <Title>Fill out this form and we'll be in touch ASAP</Title>
+    <Title>Fill out this form and we&apos;ll be in touch ASAP</Title>
     <StyledForm>
       <form
         data-netlify="true"
-        id='contact'
-        name='contact'
-        method='post'
-        action='/contact/success' // Navigate here after successful submission
+        id="contact"
+        name="contact"
+        method="post"
+        action="/contact/success" // Navigate here after successful submission
         // TODO: set up honeypot and additional spam prevention?
         // data-netlify-honeypot='bot-field'
       >
@@ -78,7 +78,7 @@ const Form = () => (
 
         <label htmlFor="query">Tell us about your business</label>
         <textarea id="query" name="query" placeholder="I'd love a shiny new website because..." rows="10" />
-        
+
         <button type="submit">Send</button>
       </form>
     </StyledForm>

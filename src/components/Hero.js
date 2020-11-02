@@ -15,7 +15,7 @@ const Div = styled.div({
   alignItems: 'center',
   minHeight: 650,
 
-  ['@media' + mediaQueries.mediumWidth]: {
+  [`@media${mediaQueries.mediumWidth}`]: {
     flexDirection: 'column',
   },
 });
@@ -23,7 +23,7 @@ const Div = styled.div({
 const MainText = styled.div({
   margin: '2rem',
 
-  ['@media' + mediaQueries.mediumWidth]: {
+  [`@media${mediaQueries.mediumWidth}`]: {
     margin: '2rem 2rem 0 2rem',
     display: 'flex',
     flexFlow: 'column nowrap',
@@ -32,7 +32,7 @@ const MainText = styled.div({
 
     '> *': {
       textAlign: 'center',
-    }
+    },
   },
 });
 
@@ -43,7 +43,7 @@ const Title = styled.div({
   '& > svg': {
     width: 350,
 
-    ['@media' + mediaQueries.mediumWidth]: {
+    [`@media${mediaQueries.mediumWidth}`]: {
       width: 300,
     },
   },
@@ -52,7 +52,7 @@ const Title = styled.div({
 const Subtitle = styled.div({
   fontSize: '1.5rem',
 
-  ['@media' + mediaQueries.mediumWidth]: {
+  [`@media${mediaQueries.mediumWidth}`]: {
     fontSize: '1.2rem',
   },
 
@@ -63,7 +63,7 @@ const Text = styled.div({
   fontSize: '1.5rem',
   lineHeight: '1.4',
 
-  ['@media' + mediaQueries.mediumWidth]: {
+  [`@media${mediaQueries.mediumWidth}`]: {
     margin: '0.5rem',
   },
 });
@@ -78,11 +78,11 @@ const ImageDiv = styled.div({
   //  to prevent issues with flexbox and gatsby-image
   width: 650,
 
-  ['@media' + mediaQueries.mediumWidth]: {
+  [`@media${mediaQueries.mediumWidth}`]: {
     width: '70%',
   },
 
-  ['@media' + mediaQueries.smallWidth]: {
+  [`@media${mediaQueries.smallWidth}`]: {
     width: '90%',
   },
 });
@@ -90,11 +90,10 @@ const ImageDiv = styled.div({
 const Image = styled(Img)({
   margin: '3rem',
 
-  ['@media' + mediaQueries.mediumWidth]: {
+  [`@media${mediaQueries.mediumWidth}`]: {
     margin: '3rem 2rem 2rem 2rem',
   },
 });
-
 
 const Hero = () => {
   const data = useStaticQuery(graphql`
@@ -110,14 +109,20 @@ const Hero = () => {
   `);
 
   return (
-    <Div id='hero'>
+    <Div id="hero">
       <MainText>
         <Title><Logo alt="Arlo Design logo" /></Title>
         <Subtitle>Bespoke design and development services</Subtitle>
         <Text>Let us create a website tailored to your needs.</Text>
+        {/* eslint-disable-next-line react/jsx-one-expression-per-line */}
         <Text>Beautiful. Discoverable. <i>Blazing fast</i>.</Text>
         <SmallText>Proudly based in Vancouver since 2019</SmallText>
-        <button onClick={() => scrollTo('#contact')}>Let's get started!</button>
+        <button
+          type="button"
+          onClick={() => scrollTo('#contact')}
+        >
+          Let&apos;s get started!
+        </button>
       </MainText>
 
       <ImageDiv>

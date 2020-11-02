@@ -14,7 +14,7 @@ const Image = styled.div({
     width: 200,
     height: 150,
 
-    ['@media' + mediaQueries.mediumWidth]: {
+    [`@media${mediaQueries.mediumWidth}`]: {
       width: 140,
       height: 120,
     },

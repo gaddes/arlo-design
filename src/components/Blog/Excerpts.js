@@ -34,7 +34,12 @@ const ExcerptTags = ({ tags }) => {
   if (!tags) return null;
   return (
     <div>
-      {tags.map(tag => <span key={tag} className="excerpt-tag">#{tag}</span>)}
+      {tags.map(tag => (
+        <span key={tag} className="excerpt-tag">
+          #
+          {tag}
+        </span>
+      ))}
     </div>
   );
 };
@@ -54,8 +59,8 @@ const BlogExcerpts = ({ blogs, activeTags }) => {
 
   if (!blogs.length) {
     return (
-      <Div  style={{ marginTop: '1rem' }}>
-        <span>There are no blogs yet... if you'd like to request one, let us know at</span>
+      <Div style={{ marginTop: '1rem' }}>
+        <span>There are no blogs yet... if you&apos;d like to request one, let us know at</span>
         {' '}
         <a
           href={`mailto:${siteMetadata.email}`}
@@ -63,7 +68,7 @@ const BlogExcerpts = ({ blogs, activeTags }) => {
         >
           {siteMetadata.email}
         </a>
-        {'.'}
+        .
       </Div>
     );
   }
@@ -80,8 +85,8 @@ const BlogExcerpts = ({ blogs, activeTags }) => {
         const showExcerpt = !activeTags.length || !difference(activeTags, tags).length;
 
         return (
-          <AnimatePresence>
-            {showExcerpt &&
+          <AnimatePresence key={node.id}>
+            {showExcerpt && (
               <motion.div
                 key={node.id}
                 initial={{ y: 100, opacity: 0 }}
@@ -96,7 +101,7 @@ const BlogExcerpts = ({ blogs, activeTags }) => {
                     <Excerpt key={node.id}>
                       <div className="excerpt-title">
                         <h3>{node.frontmatter.title}</h3>
-                        <ExcerptTags tags={tags}/>
+                        <ExcerptTags tags={tags} />
                       </div>
                       <div className="excerpt-date">{node.frontmatter.date}</div>
                       <div>{node.excerpt}</div>
@@ -104,13 +109,13 @@ const BlogExcerpts = ({ blogs, activeTags }) => {
                   </Card>
                 </Link>
               </motion.div>
-            }
+            )}
           </AnimatePresence>
         );
       })}
     </Div>
   );
-}
+};
 
 BlogExcerpts.propTypes = {
   blogs: arrayOf(shape({})).isRequired,
@@ -119,6 +124,6 @@ BlogExcerpts.propTypes = {
 
 BlogExcerpts.defaultProps = {
   activeTags: [],
-}
+};
 
 export default BlogExcerpts;

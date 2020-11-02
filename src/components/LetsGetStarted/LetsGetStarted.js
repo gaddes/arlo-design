@@ -13,7 +13,7 @@ const Div = styled.div({
   justifyContent: 'center',
   alignItems: 'center',
 
-  ['@media' + mediaQueries.mediumWidth]: {
+  [`@media${mediaQueries.mediumWidth}`]: {
     flexDirection: 'column-reverse',
   },
 });
@@ -22,7 +22,7 @@ const FormWrapper = styled.div({
   flex: '0 1 500px',
   margin: '0 3rem 0 0',
 
-  ['@media' + mediaQueries.mediumWidth]: {
+  [`@media${mediaQueries.mediumWidth}`]: {
     margin: 0,
   },
 });
@@ -31,7 +31,7 @@ const Image = styled(Img)({
   flex: '0 0 400px',
   maxHeight: 600,
 
-  ['@media' + mediaQueries.mediumWidth]: {
+  [`@media${mediaQueries.mediumWidth}`]: {
     maxWidth: 300,
     // 'flex' now dictates height because parent flex-direction is 'column-reverse'
     flex: '0 0 275px',

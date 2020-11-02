@@ -22,11 +22,10 @@ const Div = styled.div`
 const Blog = () => {
   const blogs = useBlogPosts();
 
-  const hashtags =
-    // Flatten each array of tags into a single array
-    flatten(blogs.map(({ node }) => node.frontmatter.tags))
-      // Remove null values (e.g. if post has no tag)
-      .filter(tag => tag !== null);
+  // Flatten each array of tags into a single array
+  const hashtags = flatten(blogs.map(({ node }) => node.frontmatter.tags))
+    // Remove null values (e.g. if post has no tag)
+    .filter(tag => tag !== null);
 
   // Object where key = tag, value = count (number of times tag occurs)
   const tagsCount = countBy(hashtags);

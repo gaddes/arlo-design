@@ -26,7 +26,6 @@ const iconMap = {
   },
 };
 
-
 const BaseIcon = props => {
   const { Component } = iconMap[props.type];
   return (
@@ -45,7 +44,6 @@ BaseIcon.defaultProps = {
   type: 'none',
   className: '',
 };
-
 
 const Icon = styled(BaseIcon)`
   color: ${props => iconMap[props.type].color};

@@ -19,16 +19,15 @@ const Div = styled.div`
   }
 `;
 
-const Footer = () => {
-  return (
-    <Div>
-      <div>Arlo Design &#169; {new Date().getFullYear()}</div>
-      <div className="footer-links">
-        <Link to="/blog">Blog</Link>
-        <Link to="/terms">Ts & Cs</Link>
-      </div>
-    </Div>
-  );
-};
+const Footer = () => (
+  <Div>
+    {/* eslint-disable-next-line react/jsx-one-expression-per-line */}
+    <div>Arlo Design &#169; {new Date().getFullYear()}</div>
+    <div className="footer-links">
+      <Link to="/blog">Blog</Link>
+      <Link to="/terms">Ts & Cs</Link>
+    </div>
+  </Div>
+);
 
 export default Footer;

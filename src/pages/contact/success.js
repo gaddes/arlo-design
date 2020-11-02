@@ -17,19 +17,17 @@ const Subheading = styled.h2`
   margin: 2rem 0;
 `;
 
-const Success = () => {
-  return (
-    <Flex>
-      <Heading>Thanks for your query!</Heading>
-      <Subheading>We'll be in touch ASAP...</Subheading>
-      <Link
-        to="/"
-        className="button"
-      >
-        Return to homepage
-      </Link>
-    </Flex>
-  );
-};
+const Success = () => (
+  <Flex>
+    <Heading>Thanks for your query!</Heading>
+    <Subheading>We&apos;ll be in touch ASAP...</Subheading>
+    <Link
+      to="/"
+      className="button"
+    >
+      Return to homepage
+    </Link>
+  </Flex>
+);
 
 export default Success;

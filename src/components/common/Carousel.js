@@ -43,9 +43,10 @@ const Carousel = props => (
   </StyledCarousel>
 );
 
-const { bool } = PropTypes;
+const { bool, node } = PropTypes;
 
 Carousel.propTypes = {
+  children: node.isRequired,
   alignLeft: bool,
 };
 

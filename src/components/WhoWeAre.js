@@ -12,7 +12,7 @@ const Flex = styled.div({
   justifyContent: 'center',
   alignItems: 'center',
 
-  ['@media' + mediaQueries.mediumWidth]: {
+  [`@media${mediaQueries.mediumWidth}`]: {
     flexDirection: 'column-reverse',
   },
 });
@@ -21,7 +21,7 @@ const MainText = styled.div({
   flex: '0 1 550px',
   margin: '0 3rem 0 2rem',
 
-  ['@media' + mediaQueries.mediumWidth]: {
+  [`@media${mediaQueries.mediumWidth}`]: {
     margin: '3rem 1rem 0rem 1rem',
     flex: '0 0 auto',
     display: 'flex',
@@ -31,7 +31,7 @@ const MainText = styled.div({
 
     '> *': {
       textAlign: 'center',
-    }
+    },
   },
 });
 
@@ -45,7 +45,7 @@ const Image = styled(Img)({
   maxHeight: 300,
   margin: '0 1rem',
 
-  ['@media' + mediaQueries.mediumWidth]: {
+  [`@media${mediaQueries.mediumWidth}`]: {
     // Specify 'maxWidth' rather than 'flex'
     //  because parent changes to 'column' at breakpoint
     maxWidth: 275,
@@ -53,14 +53,27 @@ const Image = styled(Img)({
   },
 });
 
-
 const WhoWeAre = () => (
   <Section id="who-we-are" title="Who we are">
     <Flex>
       <MainText>
-        <Text>Arlo Design is a web design and development agency that works with you to enhance your online presence and help you <b>achieve your business goals</b>.</Text>
-        <Text>We love to partner with small businesses like ourselves, working together to ensure every site has a <b>personal touch</b>.</Text>
-        <Text>Above all else we value <b>trust, honesty and communication</b>. These three values underpin every project we do, ensuring we stay in touch and in sync <b>every step of the way</b>.</Text>
+        <Text>
+          Arlo Design is a web design and development agency that works with you to enhance your online presence and help you
+          <b>achieve your business goals</b>
+          .
+        </Text>
+        <Text>
+          We love to partner with small businesses like ourselves, working together to ensure every site has a
+          <b>personal touch</b>
+          .
+        </Text>
+        <Text>
+          Above all else we value
+          <b>trust, honesty and communication</b>
+          . These three values underpin every project we do, ensuring we stay in touch and in sync
+          <b>every step of the way</b>
+          .
+        </Text>
       </MainText>
 
       <Image alt="A woman painting a giant screen" />
