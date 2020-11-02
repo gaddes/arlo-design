@@ -21,7 +21,7 @@ const Grid = styled.div({
   justifyContent: 'center',
   justifyItems: 'center',
 
-  ['@media' + mediaQueries.mediumWidth]: {
+  [`@media${mediaQueries.mediumWidth}`]: {
     gridTemplateColumns: '450px',
   },
 });
@@ -46,7 +46,12 @@ const cards = [
     Img={Analytics}
     alt="Woman drawing a graph on a whiteboard"
   >
-    <div>With added Google Analytics you'll know <Em>exactly</Em> how many new customers you're attracting.</div>
+    <div>
+      With added Google Analytics you&apos;ll know
+      <Em>exactly</Em>
+      {' '}
+      how many new customers you&apos;re attracting.
+    </div>
   </Card>,
 
   <Card
@@ -101,16 +106,19 @@ const HowWeCanHelp = () => {
   return (
     <Section title="How we can help your business">
       {isMediumScreen
-        ? <Flex>
+        ? (
+          <Flex>
             <Carousel>
               {cards.map(card => card)}
             </Carousel>
           </Flex>
+        )
 
-        : <Grid>
+        : (
+          <Grid>
             {cards.map(card => card)}
           </Grid>
-      }
+        )}
     </Section>
   );
 };

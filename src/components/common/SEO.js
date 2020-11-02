@@ -31,19 +31,25 @@ const SEO = props => {
   );
 };
 
-const { string } = PropTypes;
+const { string, node, shape } = PropTypes;
 
 SEO.propTypes = {
+  children: node,
+  location: shape({}),
   title: string,
   description: string,
   image: string,
+  alt: string,
   type: string,
 };
 
 SEO.defaultProps = {
+  children: null,
+  location: {},
   title: '',
   description: '',
   image: '',
+  alt: '',
   type: '',
 };
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 import Nav from './Nav';
@@ -21,6 +22,8 @@ const Flex = styled.div`
   }
 `;
 
+const { node } = PropTypes;
+
 const Layout = props => (
   <Flex>
     <GlobalStyles />
@@ -31,5 +34,9 @@ const Layout = props => (
     <Footer />
   </Flex>
 );
+
+Layout.propTypes = {
+  children: node.isRequired,
+};
 
 export default Layout;

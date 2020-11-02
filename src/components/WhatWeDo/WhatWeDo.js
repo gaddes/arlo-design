@@ -19,7 +19,7 @@ const Grid = styled.div({
   justifyContent: 'center',
   justifyItems: 'center',
 
-  ['@media' + mediaQueries.mediumWidth]: {
+  [`@media${mediaQueries.mediumWidth}`]: {
     gridTemplateColumns: '450px',
   },
 });
@@ -66,7 +66,7 @@ const data = [
     image: Seo,
     alt: 'A woman with a giant magnifying glass',
     content: [
-      'What use is your brand new site if your customers can’t find it?',
+      "What use is your brand new site if your customers can't find it?",
       'Search Engine Optimization helps to maximize your online presence and ensure that users can find you on search engines like Google.',
       'Static pages, server-side rendering and comprehensive metadata are just some of the techniques we employ to maximize discoverability for your business.',
     ],
@@ -76,8 +76,8 @@ const data = [
 // This is a function rather than <Cards /> component because <Carousel />
 //  requires individual children to work, rather than one <Cards />
 //  component which contains all the individual cards.
-const createCards = data => (
-  data.map(card => (
+const createCards = cardData => (
+  cardData.map(card => (
     <Card
       key={card.title}
       title={card.title}
@@ -95,16 +95,19 @@ const WhatWeDo = () => {
   return (
     <Section title="What we do">
       {isMediumScreen
-        ? <Flex>
+        ? (
+          <Flex>
             <Carousel>
               {createCards(data)}
             </Carousel>
           </Flex>
+        )
 
-        : <Grid>
+        : (
+          <Grid>
             {createCards(data)}
           </Grid>
-      }
+        )}
     </Section>
   );
 };

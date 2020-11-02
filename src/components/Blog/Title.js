@@ -12,13 +12,11 @@ const Title = styled.div`
   }
 `;
 
-const BlogTitle = () => {
-  return (
-    <Title>
-      <h1>Blog</h1>
-      <h2>Things that interest us...</h2>
-    </Title>
-  );
-};
+const BlogTitle = () => (
+  <Title>
+    <h1>Blog</h1>
+    <h2>Things that interest us...</h2>
+  </Title>
+);
 
 export default BlogTitle;

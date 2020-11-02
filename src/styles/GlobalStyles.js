@@ -18,7 +18,7 @@ const GlobalStyles = createGlobalStyle({
   html: {
     fontSize: 16,
 
-    ['@media' + mediaQueries.mediumWidth]: {
+    [`@media${mediaQueries.mediumWidth}`]: {
       fontSize: 14,
     },
 
@@ -52,7 +52,7 @@ const GlobalStyles = createGlobalStyle({
 
     '&:hover': {
       color: 'black',
-    }
+    },
   },
 });
 

@@ -13,7 +13,7 @@ const Flex = styled.div({
   justifyContent: 'center',
   alignItems: 'center',
 
-  ['@media' + mediaQueries.mediumWidth]: {
+  [`@media${mediaQueries.mediumWidth}`]: {
     flexDirection: 'column',
   },
 });
@@ -29,7 +29,7 @@ const Image = styled.div({
     width: 350,
     height: 300,
 
-    ['@media' + mediaQueries.mediumWidth]: {
+    [`@media${mediaQueries.mediumWidth}`]: {
       width: 250,
       height: 200,
       margin: '0 0 2rem 0',
@@ -44,7 +44,7 @@ const CardWrapper = styled.div({
   justifyContent: 'center',
   alignItems: 'center',
 
-  ['@media' + mediaQueries.mediumWidth]: {
+  [`@media${mediaQueries.mediumWidth}`]: {
     // 'flex' dictates height because parent flex-direction is now 'column'
     flex: '0 1 auto',
     maxWidth: 600,
@@ -66,10 +66,18 @@ const References = () => (
       </Image>
       <CardWrapper>
         <Card>
-          <div><i>"My site was slick, well designed and most importantly to me - easy to use. It fit my brand perfectly and suited me as a small, independent business"</i> - Catherine Isaac, BrightBox Speech and Language Therapy</div>
+          <div>
+            <i>&quot;My site was slick, well designed and most importantly to me - easy to use. It fit my brand perfectly and suited me as a small, independent business&quot;</i>
+            {' '}
+            - Catherine Isaac, BrightBox Speech and Language Therapy
+          </div>
         </Card>
         <Card>
-          <div><i>"The final product came out better than I could have ever imagined […] concise, speedy and thorough approach to website design services"</i> - Tim Sportschuetz, Sportschuetz & Company</div>
+          <div>
+            <i>&quot;The final product came out better than I could have ever imagined […] concise, speedy and thorough approach to website design services&quot;</i>
+            {' '}
+            - Tim Sportschuetz, Sportschuetz & Company
+          </div>
         </Card>
       </CardWrapper>
     </Flex>

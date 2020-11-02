@@ -10,7 +10,7 @@ const Div = styled.div({
   display: 'grid',
   gridTemplateColumns: '1fr 200px',
 
-  ['@media' + mediaQueries.mediumWidth]: {
+  [`@media${mediaQueries.mediumWidth}`]: {
     gridTemplateColumns: '1fr',
   },
 });
@@ -25,7 +25,7 @@ const Line = styled.div({
   backgroundColor: 'var(--dusty-blue)',
   margin: '12px 0',
 
-  ['@media' + mediaQueries.mediumWidth]: {
+  [`@media${mediaQueries.mediumWidth}`]: {
     margin: '12px auto',
   },
 });
@@ -37,15 +37,15 @@ const Image = styled.div({
   alignItems: 'center',
   margin: '0 0 0 1rem',
 
-  ['@media' + mediaQueries.mediumWidth]: {
+  [`@media${mediaQueries.mediumWidth}`]: {
     margin: '1.5rem 0 0 0',
   },
 
-  'svg': {
+  svg: {
     width: 180,
     height: 120,
 
-    ['@media' + mediaQueries.mediumWidth]: {
+    [`@media${mediaQueries.mediumWidth}`]: {
       width: 250,
     },
   },

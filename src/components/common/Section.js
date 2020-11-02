@@ -44,7 +44,6 @@ const TitleWrapper = styled.div`
   }
 `;
 
-
 const Section = props => (
   <Div {...props}>
     <TitleWrapper>
@@ -56,9 +55,10 @@ const Section = props => (
   </Div>
 );
 
-const { string } = PropTypes;
+const { string, node } = PropTypes;
 
 Section.propTypes = {
+  children: node.isRequired,
   title: string,
   subtitle: string,
   bgColor: string,
