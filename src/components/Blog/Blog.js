@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import flatten from 'lodash/flatten';
 import countBy from 'lodash/countBy';
-import uniq from 'lodash/uniq';
+import sortedUniq from 'lodash/sortedUniq';
+import sortBy from 'lodash/sortBy';
 
 import Title from './Title';
 import Tags from './Tags';
@@ -32,8 +33,8 @@ const Blog = () => {
 
   // TODO: Could possibly simplify this component by creating
   //  a new node using this logic in gatsby-node.js?
-  // Array with only one of each hashtag
-  const uniqTags = uniq(hashtags);
+  // Array with only one of each hashtag, in alphabetical order
+  const tags = sortedUniq(sortBy(hashtags));
 
   const [activeTags, setActiveTags] = useState([]);
 
@@ -42,7 +43,7 @@ const Blog = () => {
       <Div>
         <Title />
         <Tags
-          tags={uniqTags}
+          tags={tags}
           tagsCount={tagsCount}
           activeTags={activeTags}
           setActiveTags={setActiveTags}
